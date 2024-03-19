@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="370" height="242" viewBox="0 0 370 242">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.919" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5e77ff"/>
+      <stop offset="0.263" stop-color="#5267de"/>
+      <stop offset="0.548" stop-color="#4456ba"/>
+      <stop offset="0.824" stop-color="#374697"/>
+      <stop offset="1" stop-color="#2f3c80"/>
+    </radialGradient>
+  </defs>
+  <g id="Pricing_Item_2_Bg" data-name="Pricing Item 2 Bg" transform="translate(-775 -5381)">
+    <g id="Pricing_Item_2_Bg-2" data-name="Pricing Item 2 Bg">
+      <rect id="Bg" width="370" height="242" transform="translate(775 5381)" fill="url(#radial-gradient)"/>
+    </g>
+  </g>
+</svg>

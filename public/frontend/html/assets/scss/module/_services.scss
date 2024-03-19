@@ -1,0 +1,130 @@
+/*------------------------------------*\
+#Services
+\*------------------------------------*/
+.steps {
+
+    .step-card {
+        text-align: center;
+
+        @media screen and (max-width:991px) {
+            margin-bottom: 50px;
+        }
+
+        &.step-line-left {
+            &:before {
+                position        : absolute;
+                content         : '';
+                right           : 0;
+                top             : 10px;
+                height          : 1px;
+                width           : calc(50% - 10px);
+                background-color: #E8ECFE;
+                opacity         : .5;
+
+                @media screen and (max-width:991px) {
+                    display: none;
+                }
+            }
+        }
+
+        &.step-line-right {
+            &:after {
+                position        : absolute;
+                content         : '';
+                left            : 0;
+                top             : 10px;
+                height          : 1px;
+                width           : calc(50% - 30px);
+                background-color: #E8ECFE;
+                opacity         : .5;
+
+                @media screen and (max-width:991px) {
+                    display: none;
+                }
+            }
+
+        }
+
+        .step-card-indicator {
+            position   : absolute;
+            top        : 0;
+            left       : 50%;
+            margin-left: -10px;
+
+            &:after {
+                position        : absolute;
+                content         : '';
+                top             : 25px;
+                left            : 0;
+                height          : 20px;
+                width           : 1px;
+                background-color: #E8ECFE;
+                opacity         : .5;
+
+            }
+
+
+            span.point {
+
+                position: relative;
+
+                &:before,
+                &:after {
+                    position     : absolute;
+                    content      : '';
+                    border-radius: 50%;
+                }
+
+                &:before {
+                    left            : 5px;
+                    top             : 5px;
+                    width           : 10px;
+                    height          : 10px;
+                    margin-left     : -10px;
+                    background-color: #5E77FF;
+                }
+
+                &:after {
+                    left            : 50%;
+                    top             : 0;
+                    width           : 20px;
+                    height          : 20px;
+                    margin-left     : -10px;
+                    background-color: rgba($color-theme, .5);
+                }
+            }
+
+            +.step-card-number {
+                margin-top: 75px;
+            }
+        }
+
+        .step-card-number {
+            font-size    : 65px;
+            line-height  : 75px;
+            font-weight  : 500;
+            color        : $color-theme;
+            margin-bottom: 25px;
+        }
+
+        .step-card-title {
+            font-size    : 20px;
+            line-height  : 30px;
+            font-weight  : 500;
+            color        : $color-white;
+            margin-bottom: 21px;
+        }
+
+        .step-card-desc {
+            max-width   : 310px;
+            margin-right: auto;
+            margin-left : auto;
+
+            p {
+                margin-bottom: 0;
+                font-size    : 16px;
+                line-height  : 24px;
+            }
+        }
+    }
+}

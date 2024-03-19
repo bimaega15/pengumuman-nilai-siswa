@@ -1,0 +1,100 @@
+/*------------------------------------*\
+    #Menu
+\*------------------------------------*/
+.header {
+    .module-container {
+        padding-left: 25px;
+
+        @media #{$maxTablet} {
+            padding-left : 0;
+            margin-top   : 15px;
+            padding-right: 15px;
+        }
+
+        .module-cta {
+            .btn {
+                width           : 182px;
+                height          : 53px;
+                padding         : 0 17px;
+                display         : block;
+                cursor          : pointer;
+                font-family     : $font-heading;
+                color           : $color-white;
+                font-size       : 16px;
+                font-weight     : 400;
+                text-transform  : capitalize;
+                background-color: $color-theme;
+                border          : 0;
+                border-radius   : 50px;
+                display         : flex;
+                justify-content : center;
+                align-items     : center;
+                z-index         : inherit;
+                transition      : all 0.3s ease-in-out;
+                outline         : none;
+
+                @media #{$maxTablet} {
+                    width      : 170px;
+                    height     : 40px;
+                    line-height: 40px;
+                    border     : 1px solid $color-theme;
+                    font-size  : 13px;
+
+                    &:before {
+                        line-height: 40px;
+                    }
+                }
+
+                &:hover {
+                    background-color: $color-heading;
+                }
+            }
+        }
+
+        .module-social {
+            line-height: 139px;
+
+            ul {
+                padding-left : 30px;
+                border-left  : 1px solid rgba($color-theme, .4);
+                list-style   : none;
+                line-height  : 18px;
+                margin-bottom: 0;
+
+                @media screen and (max-width:991px) {
+                    border-left : none;
+                    padding-left: 0;
+                }
+
+                li {
+                    display     : inline-block;
+                    margin-right: 25px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    a {
+                        color    : $color-heading;
+                        font-size: 16px;
+
+                        &:hover {
+                            color: $color-theme;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-fixed {
+        .module-container {
+            .module-cta {
+                .btn {
+                    background-color: $color-theme;
+                    color           : $color-white;
+                }
+            }
+        }
+    }
+}
