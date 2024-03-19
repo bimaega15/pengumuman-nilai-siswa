@@ -40,13 +40,13 @@ class UsersController extends Controller
                     ';
                     $buttonDelete = '';
                     $buttonDelete = '
-                    <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . url('setting/users/' . $row->users_id . '?_method=delete') . '">
+                    <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . secure_url('setting/users/' . $row->users_id . '?_method=delete') . '">
                     <i class="fa-solid fa-trash"></i>
                     </button>
                     ';
 
                     $buttonAccess = '
-                    <a href="' . url('setting/access?users_id=' . $row->users_id) . '" class="btn btn-info btn-access btn-sm" data-users_id="' . $row->users_id . '">
+                    <a href="' . secure_url('setting/access?users_id=' . $row->users_id) . '" class="btn btn-info btn-access btn-sm" data-users_id="' . $row->users_id . '">
                     <i class="fa-solid fa-lock"></i>
                     </a>
                     ';

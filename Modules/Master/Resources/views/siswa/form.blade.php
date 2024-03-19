@@ -2,9 +2,9 @@
     $kelasId = isset($siswa) ? $siswa->kelas_id : '';
 @endphp
 @if (isset($siswa))
-    <form method="post" action="{{ url('master/siswa/' . $siswa->id . '?_method=put') }}" id="form-submit">
+    <form method="post" action="{{ secure_url('master/siswa/' . $siswa->id . '?_method=put') }}" id="form-submit">
     @else
-        <form method="post" action="{{ route('siswa.store') }}" id="form-submit">
+        <form method="post" action="{{ secure_url('master/siswa') }}" id="form-submit">
 @endif
 <x-modal.modal-body>
     <div class="col-span-6 sm:col-span-6 mb-2">
@@ -79,4 +79,4 @@
     </div>
 </x-modal.modal-footer>
 </form>
-<script type="text/javascript" src="{{ asset('js/master/siswa/form.js') }}"></script>
+<script type="text/javascript" src="{{ secure_asset('js/master/siswa/form.js') }}"></script>

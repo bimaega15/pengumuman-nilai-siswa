@@ -24,7 +24,7 @@ class DashboardController extends Controller
             return DataTables::eloquent($data)
                 ->addColumn('action', function ($row) {
                     $buttonNilai = '
-                    <a href="' . url('master/nilaiSiswa?siswa_id=' . $row->id) . '" class="btn btn-primary btn-sm" title="Nilai Siswa">
+                    <a href="' . secure_url('master/nilaiSiswa?siswa_id=' . $row->id) . '" class="btn btn-primary btn-sm" title="Nilai Siswa">
                     <i class="fa-solid fa-pen-to-square"></i>
                 </a>
                     ';

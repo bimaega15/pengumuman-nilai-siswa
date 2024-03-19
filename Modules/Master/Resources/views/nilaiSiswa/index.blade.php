@@ -12,7 +12,7 @@
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
             <button class="btn btn-primary shadow-md mr-2 btn-add"
-                data-url="{{ url('master/nilaiSiswa/create?siswa_id=' . $siswa->id) }}">Tambah
+                data-url="{{ secure_url('master/nilaiSiswa/create?siswa_id=' . $siswa->id) }}">Tambah
                 Data</button>
         </div>
 
@@ -75,7 +75,7 @@
 
 
     @push('custom_js')
-        <script class="url_datatable" data-url="{{ url('master/nilaiSiswa?siswa_id=' . $siswa->id) }}"></script>
-        <script src="{{ asset('js/master/nilaiSiswa/index.js') }}"></script>
+        <script class="url_datatable" data-url="{{ secure_url('master/nilaiSiswa?siswa_id=' . $siswa->id) }}"></script>
+        <script src="{{ secure_asset('js/master/nilaiSiswa/index.js') }}"></script>
     @endpush
 </x-backend-layout>

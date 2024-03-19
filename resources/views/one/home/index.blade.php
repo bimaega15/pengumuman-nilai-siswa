@@ -12,13 +12,14 @@
     <meta name="author" content="{{ $setting->nama_settings }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="{{ $setting->deskripsi_settings }}" />
-    <link href="{{ asset('upload/settings/icon/' . $setting->icon_settings) }}" rel="icon" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link href="{{ secure_asset('upload/settings/icon/' . $setting->icon_settings) }}" rel="icon" />
     <!--  Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;display=swap" rel="stylesheet"
         type="text/css" />
     <!-- Stylesheets-->
-    <link href="{{ asset('frontend/html/') }}/assets/css/vendor.css" rel="stylesheet" />
-    <link href="{{ asset('frontend/html/') }}/assets/css/style.css" rel="stylesheet" />
+    <link href="{{ secure_asset('frontend/html/') }}/assets/css/vendor.css" rel="stylesheet" />
+    <link href="{{ secure_asset('frontend/html/') }}/assets/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!--
     Document Title
@@ -43,9 +44,10 @@
         <header class="header header-transparent header-sticky">
             <nav class="navbar navbar-sticky navbar-light navbar-expand-lg" id="primary-menu">
                 <div class="container"> <a class="logo navbar-brand" href="index.html"><img class="logo logo-dark"
-                            src="{{ asset('upload/settings/logo/' . $setting->logo_settings) }}"
+                            src="{{ secure_asset('upload/settings/logo/' . $setting->logo_settings) }}"
                             alt="{{ $setting->logo_settings }}" style="height: 80px;" style="height: 50px;" /><img
-                            class="logo logo-light" src="{{ asset('upload/settings/logo/' . $setting->logo_settings) }}"
+                            class="logo logo-light"
+                            src="{{ secure_asset('upload/settings/logo/' . $setting->logo_settings) }}"
                             alt="{{ $setting->logo_settings }}" style="height: 80px;" style="height: 50px;" /></a>
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
                         data-target="#navbarContent" aria-expanded="false"><span
@@ -63,8 +65,8 @@
                         </ul>
                         <div class="module-container">
                             <!--module-btn-->
-                            <div class="module module-cta"><a class="btn btn--white" href="{{ url('login') }}">
-                                    <span>{{ Auth::id() !== '' ? 'Masuk' : 'Login' }} <i
+                            <div class="module module-cta"><a class="btn btn--white" href="{{ secure_url('login') }}">
+                                    <span>{{ Auth::id() !== null ? 'Masuk' : 'Login' }} <i
                                             class="icon-right-arrow"></i></span></a></div>
                         </div>
                     </div>
@@ -78,7 +80,7 @@
         <!-- Start hero #1-->
         <section class="hero hero-mailchimp" id="home">
             <!-- Button trigger modal -->
-            <div class="bg-section"><img src="{{ asset('frontend/html/') }}/assets/images/background/bg-1.jpg"
+            <div class="bg-section"><img src="{{ secure_asset('frontend/html/') }}/assets/images/background/bg-1.jpg"
                     alt="background" /></div>
             <div class="container">
                 <div class="hero-cotainer text--center">
@@ -140,7 +142,7 @@
         <div class="hero-screenshots">
             <div class="container">
                 <div class="row">
-                    <div class="col"><img class="img-fluid" src="{{ asset('upload/home/bg-home.jpg') }}"
+                    <div class="col"><img class="img-fluid" src="{{ secure_asset('upload/home/bg-home.jpg') }}"
                             alt="Back to school" style="margin-bottom: 30px; border-radius: 15px;" /></div>
                 </div>
             </div>
@@ -152,7 +154,7 @@
       =============================================
       -->
         <section class="steps" id="step">
-            <div class="bg-section"><img src="{{ asset('frontend/html/') }}/assets/images/background/bg-1.jpg"
+            <div class="bg-section"><img src="{{ secure_asset('frontend/html/') }}/assets/images/background/bg-1.jpg"
                     alt="background" /></div>
             <div class="container">
                 <div class="row clearfix">
@@ -216,17 +218,17 @@
                             data-nav="false" data-dots="false" data-space="30" data-loop="true" data-speed="800">
                             <!--  Client #1   -->
                             <div class="client"><img
-                                    src="{{ asset('upload/settings/icon/' . $setting->icon_settings) }}"
+                                    src="{{ secure_asset('upload/settings/icon/' . $setting->icon_settings) }}"
                                     alt="{{ $setting->icon_settings }}" />
                             </div>
                             <!--  Client #2   -->
                             <div class="client"><img
-                                    src="{{ asset('upload/settings/logo/' . $setting->logo_settings) }}"
+                                    src="{{ secure_asset('upload/settings/logo/' . $setting->logo_settings) }}"
                                     alt="{{ $setting->logo_settings }}" />
                             </div>
                             <!--  Client #3-->
                             <div class="client"><img
-                                    src="{{ asset('upload/settings/perusahaan/' . $setting->perusahaan_settings) }}"
+                                    src="{{ secure_asset('upload/settings/perusahaan/' . $setting->perusahaan_settings) }}"
                                     alt="{{ $setting->perusahaan_settings }}" />
                             </div>
                         </div>
@@ -270,7 +272,7 @@
                 </svg>
             </div>
             <div class="bg-section">
-                <img src="{{ asset('frontend/html/') }}/assets/images/background/bg-1.jpg" alt="background" />
+                <img src="{{ secure_asset('frontend/html/') }}/assets/images/background/bg-1.jpg" alt="background" />
             </div>
             <div class="container">
                 <div class="row">
@@ -324,7 +326,7 @@
                         <div class="col-12">
                             <div class="footer-widget"><a class="logo navbar-brand" href="index.html"><img
                                         class="logo logo-light"
-                                        src="{{ asset('upload/settings/logo/' . $setting->logo_settings) }}"
+                                        src="{{ secure_asset('upload/settings/logo/' . $setting->logo_settings) }}"
                                         alt="{{ $setting->logo_settings }}" style="height: 180px;" /></a>
                                 <div class="footer-contact">
                                     <ul class="list-unstyled">
@@ -393,13 +395,13 @@
     Footer Scripts
     =============================================
     -->
-    <script src="{{ asset('frontend/html/') }}/assets/js/vendor/jquery-3.5.1.min.js"></script>
-    <script src="{{ asset('frontend/html/') }}/assets/js/vendor.js"></script>
-    <script src="{{ asset('frontend/html/') }}/assets/js/functions.js"></script>
+    <script src="{{ secure_asset('frontend/html/') }}/assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="{{ secure_asset('frontend/html/') }}/assets/js/vendor.js"></script>
+    <script src="{{ secure_asset('frontend/html/') }}/assets/js/functions.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-    <script class="url_home" data-value="{{ url('/') }}"></script>
-    <script src="{{ asset('js/home/index.js') }}"></script>
+    <script class="url_home" data-value="{{ secure_url('/') }}"></script>
+    <script src="{{ secure_asset('js/home/index.js') }}"></script>
 </body>
 
 </html>

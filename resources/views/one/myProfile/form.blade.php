@@ -1,4 +1,4 @@
-<form method="post" action="{{ url('myProfile/' . $profile->users_id . '/update?_method=put') }}" id="form-submit">
+<form method="post" action="{{ secure_url('myProfile/' . $profile->users_id . '/update?_method=put') }}" id="form-submit">
     <x-modal.modal-body>
         <input type="hidden" name="id" value="{{ isset($profile) ? $profile->id : '' }}">
         <input type="hidden" name="password_old" value="{{ isset($profile) ? $profile->users->password : '' }}">
@@ -34,4 +34,4 @@
 </form>
 
 
-<script type="text/javascript" src="{{ asset('js/myProfile/form.js') }}"></script>
+<script type="text/javascript" src="{{ secure_asset('js/myProfile/form.js') }}"></script>

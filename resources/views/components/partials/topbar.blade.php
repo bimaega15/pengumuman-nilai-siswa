@@ -40,7 +40,7 @@
                     <a href="#" class="flex items-center mt-2">
                         <div class="w-8 h-8 image-fit">
                             <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                src="{{ asset('backend') }}/dist/images/profile-15.jpg">
+                                src="{{ secure_asset('backend') }}/dist/images/profile-15.jpg">
                         </div>
                         <div class="ml-3">Angelina Jolie</div>
                         <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">
@@ -49,7 +49,7 @@
                     <a href="#" class="flex items-center mt-2">
                         <div class="w-8 h-8 image-fit">
                             <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                src="{{ asset('backend') }}/dist/images/profile-10.jpg">
+                                src="{{ secure_asset('backend') }}/dist/images/profile-10.jpg">
                         </div>
                         <div class="ml-3">Christian Bale</div>
                         <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">
@@ -58,7 +58,7 @@
                     <a href="#" class="flex items-center mt-2">
                         <div class="w-8 h-8 image-fit">
                             <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                src="{{ asset('backend') }}/dist/images/profile-8.jpg">
+                                src="{{ secure_asset('backend') }}/dist/images/profile-8.jpg">
                         </div>
                         <div class="ml-3">Tom Cruise</div>
                         <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">
@@ -67,7 +67,7 @@
                     <a href="#" class="flex items-center mt-2">
                         <div class="w-8 h-8 image-fit">
                             <img alt="Midone - HTML Admin Template" class="rounded-full"
-                                src="{{ asset('backend') }}/dist/images/profile-11.jpg">
+                                src="{{ secure_asset('backend') }}/dist/images/profile-11.jpg">
                         </div>
                         <div class="ml-3">Russell Crowe</div>
                         <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">
@@ -78,7 +78,7 @@
                 <a href="#" class="flex items-center mt-2">
                     <div class="w-8 h-8 image-fit">
                         <img alt="Midone - HTML Admin Template" class="rounded-full"
-                            src="{{ asset('backend') }}/dist/images/preview-13.jpg">
+                            src="{{ secure_asset('backend') }}/dist/images/preview-13.jpg">
                     </div>
                     <div class="ml-3">Oppo Find X2 Pro</div>
                     <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">Smartphone &amp;
@@ -87,7 +87,7 @@
                 <a href="#" class="flex items-center mt-2">
                     <div class="w-8 h-8 image-fit">
                         <img alt="Midone - HTML Admin Template" class="rounded-full"
-                            src="{{ asset('backend') }}/dist/images/preview-11.jpg">
+                            src="{{ secure_asset('backend') }}/dist/images/preview-11.jpg">
                     </div>
                     <div class="ml-3">Sony A7 III</div>
                     <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">Photography</div>
@@ -95,7 +95,7 @@
                 <a href="#" class="flex items-center mt-2">
                     <div class="w-8 h-8 image-fit">
                         <img alt="Midone - HTML Admin Template" class="rounded-full"
-                            src="{{ asset('backend') }}/dist/images/preview-3.jpg">
+                            src="{{ secure_asset('backend') }}/dist/images/preview-3.jpg">
                     </div>
                     <div class="ml-3">Nikon Z6</div>
                     <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">Photography</div>
@@ -103,7 +103,7 @@
                 <a href="#" class="flex items-center mt-2">
                     <div class="w-8 h-8 image-fit">
                         <img alt="Midone - HTML Admin Template" class="rounded-full"
-                            src="{{ asset('backend') }}/dist/images/preview-7.jpg">
+                            src="{{ secure_asset('backend') }}/dist/images/preview-7.jpg">
                     </div>
                     <div class="ml-3">Nikon Z6</div>
                     <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">Photography</div>
@@ -123,7 +123,7 @@
                 <div class="cursor-pointer relative flex items-center ">
                     <div class="w-12 h-12 flex-none image-fit mr-1">
                         <img alt="Midone - HTML Admin Template" class="rounded-full"
-                            src="{{ asset('backend') }}/dist/images/profile-15.jpg">
+                            src="{{ secure_asset('backend') }}/dist/images/profile-15.jpg">
                         <div
                             class="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600">
                         </div>
@@ -141,7 +141,7 @@
                 <div class="cursor-pointer relative flex items-center mt-5">
                     <div class="w-12 h-12 flex-none image-fit mr-1">
                         <img alt="Midone - HTML Admin Template" class="rounded-full"
-                            src="{{ asset('backend') }}/dist/images/profile-10.jpg">
+                            src="{{ secure_asset('backend') }}/dist/images/profile-10.jpg">
                         <div
                             class="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600">
                         </div>
@@ -159,7 +159,7 @@
                 <div class="cursor-pointer relative flex items-center mt-5">
                     <div class="w-12 h-12 flex-none image-fit mr-1">
                         <img alt="Midone - HTML Admin Template" class="rounded-full"
-                            src="{{ asset('backend') }}/dist/images/profile-8.jpg">
+                            src="{{ secure_asset('backend') }}/dist/images/profile-8.jpg">
                         <div
                             class="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600">
                         </div>
@@ -177,7 +177,7 @@
                 <div class="cursor-pointer relative flex items-center mt-5">
                     <div class="w-12 h-12 flex-none image-fit mr-1">
                         <img alt="Midone - HTML Admin Template" class="rounded-full"
-                            src="{{ asset('backend') }}/dist/images/profile-11.jpg">
+                            src="{{ secure_asset('backend') }}/dist/images/profile-11.jpg">
                         <div
                             class="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600">
                         </div>
@@ -195,7 +195,7 @@
                 <div class="cursor-pointer relative flex items-center mt-5">
                     <div class="w-12 h-12 flex-none image-fit mr-1">
                         <img alt="Midone - HTML Admin Template" class="rounded-full"
-                            src="{{ asset('backend') }}/dist/images/profile-11.jpg">
+                            src="{{ secure_asset('backend') }}/dist/images/profile-11.jpg">
                         <div
                             class="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600">
                         </div>
@@ -219,7 +219,7 @@
         <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button"
             aria-expanded="false" data-tw-toggle="dropdown">
             <img alt="Midone - HTML Admin Template"
-                src="{{ asset('upload/profile/' . UtilsHelp::myProfile()->profile->gambar_profile) }}">
+                src="{{ secure_asset('upload/profile/' . UtilsHelp::myProfile()->profile->gambar_profile) }}">
         </div>
         <div class="dropdown-menu w-56">
             <ul class="dropdown-content bg-primary text-white">
@@ -232,15 +232,15 @@
                     <hr class="dropdown-divider border-white/[0.08]">
                 </li>
                 <li>
-                    <a href="{{ url('myProfile') }}" class="dropdown-item hover:bg-white/5"> <i data-lucide="user"
-                            class="w-4 h-4 mr-2"></i> Profile </a>
+                    <a href="{{ secure_url('myProfile') }}" class="dropdown-item hover:bg-white/5"> <i
+                            data-lucide="user" class="w-4 h-4 mr-2"></i> Profile </a>
                 </li>
 
                 <li>
                     <hr class="dropdown-divider border-white/[0.08]">
                 </li>
                 <li>
-                    <a href="{{ url('logout') }}" class="dropdown-item hover:bg-white/5 btn-logout"> <i
+                    <a href="{{ secure_url('logout') }}" class="dropdown-item hover:bg-white/5 btn-logout"> <i
                             data-lucide="toggle-right" class="w-4 h-4 mr-2"></i> Logout </a>
                 </li>
             </ul>

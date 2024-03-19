@@ -1,5 +1,7 @@
 // Define
 select2Standard(".select2", "#modal_large");
+var url_choosemenu = $('.url_choosemenu').data('url');
+
 function getListTableMenu() {
     var url_datatable = $(".url_datatable").data("url");
     var dataTableValue = $(".data_datatable").data("table");
@@ -46,7 +48,7 @@ function getListTableMenu() {
                             item.id
                         }" id="id_${item.id}" data-id="${
                         item.id
-                    }" data-url="{{ url('master/menu/chooseMenu') }}"
+                    }" data-url="${url_choosemenu}"
                         ${check_input.includes(item.id) ? "checked" : ""}
                         >
                         <label class="form-check-label" for="id_${item.id}">

@@ -88,8 +88,8 @@
         </div>
     </div>
     @push('custom_js')
-        <script class="url_root" data-url="{{ url('/') }}"></script>
-        <script class="url_datatable" data-url="{{ route('dashboard.index') }}"></script>
-        <script src="{{ asset('js/dashboard/index.js') }}"></script>
+        <script class="url_root" data-url="{{ secure_url('/') }}"></script>
+        <script class="url_datatable" data-url="{{ secure_url('dashboard') }}"></script>
+        <script src="{{ secure_asset('js/dashboard/index.js') }}"></script>
     @endpush
 </x-backend-layout>

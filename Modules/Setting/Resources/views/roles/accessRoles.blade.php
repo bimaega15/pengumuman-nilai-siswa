@@ -1,7 +1,7 @@
 <x-modal.modal-body>
     <div class="col-span-12 sm:col-span-12 mb-2">
         <h2 class="intro-y text-lg font-medium">
-            Role: {{$role->name}}
+            Role: {{ $role->name }}
         </h2>
         <hr>
     </div>
@@ -17,14 +17,18 @@
             </thead>
             <tbody>
                 @foreach ($permissions as $index => $item)
-                <tr>
-                    <td>{{$index + 1}}</td>
-                    <td>{{$item->name}}</td>
-                    <td>
-                        <input type="checkbox" id="id_{{$item->id}}" class="form-checkbox h-5 w-5 text-blue-600 check-input-roles" data-id="{{$item->id}}" data-url="{{ url('setting/assignRoles') }}" data-role_id="{{$role->id}}" value="{{$item->id}}" {{$role->hasPermissionTo($item->name) ? 'checked' : ''}}>
-                        <label class="ml-2 text-gray-700" for="id_{{$item->id}}"></label>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>
+                            <input type="checkbox" id="id_{{ $item->id }}"
+                                class="form-checkbox h-5 w-5 text-blue-600 check-input-roles"
+                                data-id="{{ $item->id }}" data-url="{{ secure_url('setting/assignRoles') }}"
+                                data-role_id="{{ $role->id }}" value="{{ $item->id }}"
+                                {{ $role->hasPermissionTo($item->name) ? 'checked' : '' }}>
+                            <label class="ml-2 text-gray-700" for="id_{{ $item->id }}"></label>
+                        </td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
@@ -39,4 +43,4 @@
         </button>
     </div>
 </x-modal.modal-footer>
-<script type="text/javascript" src="{{ asset('js/setting/assignRoles/form.js') }}"></script>
+<script type="text/javascript" src="{{ secure_asset('js/setting/assignRoles/form.js') }}"></script>

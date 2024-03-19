@@ -43,13 +43,13 @@ class SiswaController extends Controller
                 ';
                     $buttonDelete = '';
                     $buttonDelete = '
-                <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . url('master/siswa/' . $row->id . '?_method=delete') . '">
+                <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . secure_url('master/siswa/' . $row->id . '?_method=delete') . '">
                     <i class="fa-solid fa-trash"></i>
                 </button>
                 ';
 
                     $buttonNilai = '';
-                    $buttonNilai = '<a href="' . url('master/nilaiSiswa?siswa_id=' . $row->id) . '" class="btn btn-primary btn-sm" title="Nilai Siswa">
+                    $buttonNilai = '<a href="' . secure_url('master/nilaiSiswa?siswa_id=' . $row->id) . '" class="btn btn-primary btn-sm" title="Nilai Siswa">
                 <i class="fa-solid fa-pen-to-square"></i>
             </a>';
 

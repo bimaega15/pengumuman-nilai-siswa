@@ -253,7 +253,7 @@ class UtilsHelper
                 </a>
                 ';
             $buttonDelete = '
-                <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . url('master/menu/' . $menu_item->id . '?_method=delete') . '" style="padding: 5px 5px;">
+                <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . secure_url('master/menu/' . $menu_item->id . '?_method=delete') . '" style="padding: 5px 5px;">
                     <i class="fa-solid fa-trash"></i>
                 </button>
                 ';

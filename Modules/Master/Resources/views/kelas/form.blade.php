@@ -1,7 +1,7 @@
 @if (isset($kelas))
-    <form method="post" action="{{ url('master/kelas/' . $kelas->id . '?_method=put') }}" id="form-submit">
+    <form method="post" action="{{ secure_url('master/kelas/' . $kelas->id . '?_method=put') }}" id="form-submit">
     @else
-        <form method="post" action="{{ route('kelas.store') }}" id="form-submit">
+        <form method="post" action="{{ secure_url('master/kelas') }}" id="form-submit">
 @endif
 <x-modal.modal-body>
     <div class="col-span-12 sm:col-span-12 mb-2">
@@ -54,4 +54,4 @@
     </div>
 </x-modal.modal-footer>
 </form>
-<script type="text/javascript" src="{{ asset('js/master/kelas/form.js') }}"></script>
+<script type="text/javascript" src="{{ secure_asset('js/master/kelas/form.js') }}"></script>

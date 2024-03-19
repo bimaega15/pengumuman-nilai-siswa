@@ -13,7 +13,8 @@
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
             <button type="button" class="btn btn-primary shadow-md mr-2 btn-import" data-tw-toggle="modal"
                 data-tw-target="#modal-import">Import Data</button>
-            <button class="btn btn-primary shadow-md mr-2 btn-add" data-url="{{ route('siswa.create') }}">Tambah
+            <button class="btn btn-primary shadow-md mr-2 btn-add"
+                data-url="{{ secure_url('master/siswa/create') }}">Tambah
                 Data</button>
         </div>
 
@@ -40,7 +41,7 @@
 
     <div id="modal_import" class="modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
-            <form action="{{ route('siswa.import') }}" method="post" id="form-submit-import">
+            <form action="{{ secure_url('master/master/siswa/import/data') }}" method="post" id="form-submit-import">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h2 class="font-medium text-base mr-auto">
@@ -69,7 +70,7 @@
 
 
     @push('custom_js')
-        <script class="url_datatable" data-url="{{ route('siswa.index') }}"></script>
-        <script src="{{ asset('js/master/siswa/index.js') }}"></script>
+        <script class="url_datatable" data-url="{{ secure_url('master/siswa') }}"></script>
+        <script src="{{ secure_asset('js/master/siswa/index.js') }}"></script>
     @endpush
 </x-backend-layout>
