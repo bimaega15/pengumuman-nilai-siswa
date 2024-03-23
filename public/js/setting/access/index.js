@@ -10,12 +10,19 @@ $(document).ready(function () {
         $.ajax({
             type: "post",
             url: getUrl,
+            beforeSend: function () {
+                $(".loading-process").removeClass("hidden");
+            },
             data: {
                 id,
                 value,
                 users_id,
             },
             dataType: "json",
+            success: function () {},
+            complete: function () {
+                $(".loading-process").addClass("hidden");
+            },
         });
     });
 });

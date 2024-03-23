@@ -1,8 +1,7 @@
 @if (isset($permissions))
-    <form method="post" action="{{ secure_url('setting/permissions/' . $permissions->id . '?_method=put') }}"
-        id="form-submit">
+    <form method="post" action="{{ url('setting/permissions/' . $permissions->id . '?_method=put') }}" id="form-submit">
     @else
-        <form method="post" action="{{ secure_url('setting/permissions') }}" id="form-submit">
+        <form method="post" action="{{ url('setting/permissions') }}" id="form-submit">
 @endif
 <x-modal.modal-body>
     <div class="col-span-12 sm:col-span-12 mb-2">
@@ -24,4 +23,4 @@
 </x-modal.modal-footer>
 </form>
 
-<script type="text/javascript" src="{{ secure_asset('js/setting/permissions/form.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/setting/permissions/form.js') }}"></script>

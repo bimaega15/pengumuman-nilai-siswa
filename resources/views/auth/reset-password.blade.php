@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="{{ secure_url('reset-password') }}">
+    <form method="POST" action="{{ url('reset-password') }}">
         @csrf
 
         <!-- Password Reset Token -->

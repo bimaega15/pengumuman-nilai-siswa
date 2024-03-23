@@ -31,13 +31,13 @@ class NilaiSiswaController extends Controller
                 ->addColumn('action', function ($row) {
                     $buttonUpdate = '';
                     $buttonUpdate = '
-                <a href="' . secure_url('master/nilaiSiswa/' . $row->id . '/edit?siswa_id=' . $row->siswa_id) . '" class="btn btn-warning btn-edit btn-sm">
+                <a href="' . url('master/nilaiSiswa/' . $row->id . '/edit?siswa_id=' . $row->siswa_id) . '" class="btn btn-warning btn-edit btn-sm">
                     <i class="fa-solid fa-pencil"></i>
                 </a>
                 ';
                     $buttonDelete = '';
                     $buttonDelete = '
-                <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . secure_url('master/nilaiSiswa/' . $row->id . '?_method=delete') . '">
+                <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . url('master/nilaiSiswa/' . $row->id . '?_method=delete') . '">
                     <i class="fa-solid fa-trash"></i>
                 </button>
                 ';
@@ -59,7 +59,7 @@ class NilaiSiswaController extends Controller
                 })
                 ->addColumn('nilai_nsiswa', function ($row) {
                     $output = '<strong>
-                    <a style="color: #428bca;" href="' . $row->nilai_nsiswa . '">' . $row->nilai_nsiswa . '</a>
+                    <a target="_blank" style="color: #428bca;" href="' . $row->nilai_nsiswa . '">' . $row->nilai_nsiswa . '</a>
                     </strong>';
                     return $output;
                 })

@@ -10,7 +10,7 @@
     @endif
 
     <div class="mt-4 flex items-center justify-between">
-        <form method="POST" action="{{ secure_url('email/verification-notification') }}">
+        <form method="POST" action="{{ url('email/verification-notification') }}">
             @csrf
 
             <div>
@@ -20,7 +20,7 @@
             </div>
         </form>
 
-        <form method="POST" action="{{ secure_url('logout') }}">
+        <form method="POST" action="{{ url('logout') }}">
             @csrf
 
             <button type="submit"

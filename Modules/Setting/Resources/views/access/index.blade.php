@@ -1,7 +1,7 @@
 @if (isset($access))
-    <form method="post" action="{{ secure_url('setting/access/' . $access->id . '?_method=put') }}" id="form-submit">
+    <form method="post" action="{{ url('setting/access/' . $access->id . '?_method=put') }}" id="form-submit">
     @else
-        <form method="post" action="{{ secure_url('setting/access') }}" id="form-submit">
+        <form method="post" action="{{ url('setting/access') }}" id="form-submit">
 @endif
 <x-modal.modal-body>
     <div class="col-span-12 sm:col-span-12 mb-2">
@@ -32,8 +32,7 @@
                                                 <input type="checkbox"
                                                     class="form-checkbox h-5 w-5 text-blue-600 check-input-roles"
                                                     value="{{ $item->id }}" id="id_{{ $item->id }}"
-                                                    data-id="{{ $item->id }}"
-                                                    data-url="{{ secure_url('setting/access') }}"
+                                                    data-id="{{ $item->id }}" data-url="{{ url('setting/access') }}"
                                                     data-users_id="{{ $getProfile->id }}"
                                                     {{ $getProfile->hasRole($item->name) ? 'checked' : '' }}>
                                                 <label for="id_{{ $item->id }}" class="ml-2 text-gray-700">
@@ -62,4 +61,4 @@
 </form>
 
 
-<script type="text/javascript" src="{{ secure_asset('js/setting/access/index.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/setting/access/index.js') }}"></script>

@@ -1,8 +1,7 @@
 @if (isset($dataStatis))
-    <form method="post" action="{{ secure_url('master/dataStatis/' . $dataStatis->id . '?_method=put') }}"
-        id="form-submit">
+    <form method="post" action="{{ url('master/dataStatis/' . $dataStatis->id . '?_method=put') }}" id="form-submit">
     @else
-        <form method="post" action="{{ secure_url('master/dataStatis') }}" id="form-submit">
+        <form method="post" action="{{ url('master/dataStatis') }}" id="form-submit">
 @endif
 <x-modal.modal-body>
     <div class="col-span-12 sm:col-span-12 mb-2">
@@ -50,4 +49,4 @@
 <script class="url_parent_id" data-parent_id="{{ isset($parentStatis) ? $parentStatis->parentid_datastatis : '' }}"
     data-parent_name="{{ isset($parentStatis) ? $parentStatis->nama_datastatis : '' }}"></script>
 
-<script type="text/javascript" src="{{ secure_asset('js/master/dataStatis/form.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/master/dataStatis/form.js') }}"></script>

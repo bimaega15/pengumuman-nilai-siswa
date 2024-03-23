@@ -1,8 +1,7 @@
 @if (isset($profile))
-    <form method="post" action="{{ secure_url('setting/users/' . $profile->users_id . '?_method=put') }}"
-        id="form-submit">
+    <form method="post" action="{{ url('setting/users/' . $profile->users_id . '?_method=put') }}" id="form-submit">
     @else
-        <form method="post" action="{{ secure_url('setting/users') }}" id="form-submit">
+        <form method="post" action="{{ url('setting/users') }}" id="form-submit">
 @endif
 <x-modal.modal-body>
     <input type="hidden" name="id" value="{{ isset($profile) ? $profile->id : '' }}">
@@ -40,4 +39,4 @@
 </form>
 
 
-<script type="text/javascript" src="{{ secure_asset('js/setting/users/form.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/setting/users/form.js') }}"></script>

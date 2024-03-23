@@ -11,7 +11,7 @@
  Target Server Version : 100428 (10.4.28-MariaDB)
  File Encoding         : 65001
 
- Date: 19/03/2024 14:10:38
+ Date: 23/03/2024 14:46:02
 */
 
 SET NAMES utf8mb4;
@@ -30,7 +30,7 @@ CREATE TABLE `data_statis`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 421 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 422 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of data_statis
@@ -555,7 +555,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of migrations
@@ -579,6 +579,7 @@ INSERT INTO `migrations` VALUES (16, '2024_03_17_155826_change_column_to_siswa',
 INSERT INTO `migrations` VALUES (17, '2024_03_17_171359_add_column_to_nilai_siswa', 2);
 INSERT INTO `migrations` VALUES (18, '2024_03_17_182325_change_column_to_nilai_siswa', 3);
 INSERT INTO `migrations` VALUES (19, '2024_03_17_185215_change_column_to_nilai_siswa', 4);
+INSERT INTO `migrations` VALUES (20, '2024_03_23_090002_change_column_to_nilai_siswa', 5);
 
 -- ----------------------------
 -- Table structure for model_has_permissions
@@ -614,6 +615,7 @@ CREATE TABLE `model_has_roles`  (
 -- Records of model_has_roles
 -- ----------------------------
 INSERT INTO `model_has_roles` VALUES (1, 'App\\Models\\User', 1);
+INSERT INTO `model_has_roles` VALUES (1, 'App\\Models\\User', 5);
 
 -- ----------------------------
 -- Table structure for nilai_siswa
@@ -624,22 +626,22 @@ CREATE TABLE `nilai_siswa`  (
   `siswa_id` int UNSIGNED NOT NULL,
   `judul_nsiswa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `deskripsi_nsiswa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
-  `nilai_nsiswa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nilai_nsiswa` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `status_nsiswa` tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `nilai_siswa_siswa_id_foreign`(`siswa_id` ASC) USING BTREE,
   CONSTRAINT `nilai_siswa_siswa_id_foreign` FOREIGN KEY (`siswa_id`) REFERENCES `siswa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 46 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of nilai_siswa
 -- ----------------------------
-INSERT INTO `nilai_siswa` VALUES (10, 1, NULL, NULL, 'https://wa.me/6282277506232', NULL, NULL, 1);
-INSERT INTO `nilai_siswa` VALUES (11, 2, NULL, NULL, 'https://wa.me/6282277506232', NULL, NULL, 1);
-INSERT INTO `nilai_siswa` VALUES (12, 3, NULL, NULL, 'https://wa.me/6282277506232', NULL, NULL, 1);
-INSERT INTO `nilai_siswa` VALUES (13, 4, NULL, NULL, 'https://wa.me/6282277506232', NULL, NULL, 1);
+INSERT INTO `nilai_siswa` VALUES (42, 33, NULL, NULL, 'https://drive.google.com/file/d/11faiw5Ue03lqIJIBXRhYruO7dGQaX-cJ/view?usp=drive_link', NULL, NULL, 1);
+INSERT INTO `nilai_siswa` VALUES (43, 34, NULL, NULL, 'https://drive.google.com/file/d/1krPcODTVfn4YuY0OLTTHWfyX5M49YvgC/view?usp=drive_link', NULL, NULL, 1);
+INSERT INTO `nilai_siswa` VALUES (44, 35, NULL, NULL, 'https://drive.google.com/file/d/1jD4MaNLnsUyF_P2lNoQCSUPIouRJJGkO/view?usp=drive_link', NULL, NULL, 1);
+INSERT INTO `nilai_siswa` VALUES (45, 36, NULL, NULL, 'https://drive.google.com/file/d/1gbPu2JCyG9VQZ47SJSO0nceO8EMD4r-u/view?usp=drive_link', NULL, NULL, 1);
 
 -- ----------------------------
 -- Table structure for password_resets
@@ -668,106 +670,109 @@ CREATE TABLE `permissions`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `permissions_name_guard_name_unique`(`name` ASC, `guard_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 96 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2620 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of permissions
 -- ----------------------------
-INSERT INTO `permissions` VALUES (1, 'register', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (2, 'login', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (3, 'password.request', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (4, 'password.email', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (5, 'password.reset', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (6, 'password.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (7, 'verification.notice', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (8, 'verification.verify', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (9, 'verification.send', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (10, 'password.confirm', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (11, 'password.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (12, 'logout', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (13, 'myProfile.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (14, 'myProfile.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (15, 'myProfile.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (16, 'dashboard.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (17, 'dashboard.expired', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (18, 'master.dataStatis.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (19, 'master.dataStatis.create', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (20, 'master.dataStatis.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (21, 'master.dataStatis.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (22, 'master.dataStatis.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (23, 'master.dataStatis.destroy', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (24, 'master.dataStatis.parentStatis', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (25, 'master.dataStatis.migrasi', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (26, 'master.menu.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (27, 'master.menu.create', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (28, 'master.menu.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (29, 'master.menu.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (30, 'master.menu.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (31, 'master.menu.destroy', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (32, 'master.menu.renderTree', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (33, 'master.menu.dataTable', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (34, 'master.menu.sortAndNested', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (35, 'kelas.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (36, 'kelas.create', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (37, 'kelas.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (38, 'kelas.show', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (39, 'kelas.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (40, 'kelas.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (41, 'kelas.destroy', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (42, 'siswa.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (43, 'siswa.create', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (44, 'siswa.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (45, 'siswa.show', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (46, 'siswa.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (47, 'siswa.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (48, 'siswa.destroy', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (49, 'nilaiSiswa.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (50, 'nilaiSiswa.create', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (51, 'nilaiSiswa.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (52, 'nilaiSiswa.show', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (53, 'nilaiSiswa.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (54, 'nilaiSiswa.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (55, 'nilaiSiswa.destroy', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (56, 'setting.settings.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (57, 'setting.settings.create', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (58, 'setting.settings.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (59, 'setting.settings.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (60, 'setting.settings.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (61, 'setting.settings.destroy', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (62, 'setting.settings.checkData', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (63, 'setting.roles.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (64, 'setting.roles.create', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (65, 'setting.roles.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (66, 'setting.roles.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (67, 'setting.roles.show', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (68, 'setting.roles.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (69, 'setting.roles.destroy', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (70, 'setting.permissions.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (71, 'setting.permissions.create', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (72, 'setting.permissions.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (73, 'setting.permissions.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (74, 'setting.permissions.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (75, 'setting.permissions.destroy', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (76, 'setting.assignRoles.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (77, 'setting.assignRoles.create', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (78, 'setting.assignRoles.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (79, 'setting.assignRoles.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (80, 'setting.assignRoles.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (81, 'setting.assignRoles.destroy', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (82, 'setting.users.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (83, 'setting.users.create', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (84, 'setting.users.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (85, 'setting.users.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (86, 'setting.users.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (87, 'setting.users.destroy', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (88, 'setting.users.getUsersProfile', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (89, 'setting.users.getUsersIdProfile', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (90, 'setting.access.index', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (91, 'setting.access.create', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (92, 'setting.access.store', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (93, 'setting.access.edit', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (94, 'setting.access.update', 'web', NULL, NULL);
-INSERT INTO `permissions` VALUES (95, 'setting.access.destroy', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2522, 'home.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2523, 'register', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2524, 'login', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2525, 'password.request', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2526, 'password.email', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2527, 'password.reset', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2528, 'password.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2529, 'verification.notice', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2530, 'verification.verify', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2531, 'verification.send', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2532, 'password.confirm', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2533, 'password.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2534, 'logout', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2535, 'myProfile.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2536, 'myProfile.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2537, 'myProfile.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2538, 'dashboard.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2539, 'dashboard.expired', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2540, 'master.dataStatis.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2541, 'master.dataStatis.create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2542, 'master.dataStatis.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2543, 'master.dataStatis.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2544, 'master.dataStatis.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2545, 'master.dataStatis.destroy', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2546, 'master.dataStatis.parentStatis', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2547, 'master.dataStatis.migrasi', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2548, 'master.menu.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2549, 'master.menu.create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2550, 'master.menu.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2551, 'master.menu.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2552, 'master.menu.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2553, 'master.menu.destroy', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2554, 'master.menu.renderTree', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2555, 'master.menu.dataTable', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2556, 'master.menu.sortAndNested', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2557, 'kelas.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2558, 'kelas.create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2559, 'kelas.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2560, 'kelas.show', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2561, 'kelas.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2562, 'kelas.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2563, 'kelas.destroy', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2564, 'siswa.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2565, 'siswa.create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2566, 'siswa.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2567, 'siswa.show', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2568, 'siswa.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2569, 'siswa.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2570, 'siswa.destroy', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2571, 'siswa.deleteAll', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2572, 'siswa.import', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2573, 'nilaiSiswa.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2574, 'nilaiSiswa.create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2575, 'nilaiSiswa.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2576, 'nilaiSiswa.show', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2577, 'nilaiSiswa.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2578, 'nilaiSiswa.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2579, 'nilaiSiswa.destroy', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2580, 'setting.settings.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2581, 'setting.settings.create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2582, 'setting.settings.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2583, 'setting.settings.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2584, 'setting.settings.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2585, 'setting.settings.destroy', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2586, 'setting.settings.checkData', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2587, 'setting.roles.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2588, 'setting.roles.create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2589, 'setting.roles.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2590, 'setting.roles.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2591, 'setting.roles.show', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2592, 'setting.roles.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2593, 'setting.roles.destroy', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2594, 'setting.permissions.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2595, 'setting.permissions.create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2596, 'setting.permissions.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2597, 'setting.permissions.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2598, 'setting.permissions.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2599, 'setting.permissions.destroy', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2600, 'setting.assignRoles.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2601, 'setting.assignRoles.create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2602, 'setting.assignRoles.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2603, 'setting.assignRoles.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2604, 'setting.assignRoles.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2605, 'setting.assignRoles.destroy', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2606, 'setting.users.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2607, 'setting.users.create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2608, 'setting.users.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2609, 'setting.users.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2610, 'setting.users.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2611, 'setting.users.destroy', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2612, 'setting.users.getUsersProfile', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2613, 'setting.users.getUsersIdProfile', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2614, 'setting.access.index', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2615, 'setting.access.create', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2616, 'setting.access.store', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2617, 'setting.access.edit', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2618, 'setting.access.update', 'web', NULL, NULL);
+INSERT INTO `permissions` VALUES (2619, 'setting.access.destroy', 'web', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for personal_access_tokens
@@ -812,12 +817,13 @@ CREATE TABLE `profile`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `profile_users_id_foreign`(`users_id` ASC) USING BTREE,
   CONSTRAINT `profile_users_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of profile
 -- ----------------------------
 INSERT INTO `profile` VALUES (1, 1, '12382993', 'Admin Profile', 'adminprofile@gmail.com', 'alamat admin profile', '082388392821', 'L', 'default.png', '2024-03-17 16:36:18', '2024-03-17 16:36:18');
+INSERT INTO `profile` VALUES (5, 5, '82398239', 'nama tes', 'tes@gmail.com', 'alamat nama tes', '8398398', 'L', 'default.png', '2024-03-23 10:25:43', '2024-03-23 10:25:43');
 
 -- ----------------------------
 -- Table structure for role_has_permissions
@@ -835,101 +841,104 @@ CREATE TABLE `role_has_permissions`  (
 -- ----------------------------
 -- Records of role_has_permissions
 -- ----------------------------
-INSERT INTO `role_has_permissions` VALUES (1, 1);
-INSERT INTO `role_has_permissions` VALUES (2, 1);
-INSERT INTO `role_has_permissions` VALUES (3, 1);
-INSERT INTO `role_has_permissions` VALUES (4, 1);
-INSERT INTO `role_has_permissions` VALUES (5, 1);
-INSERT INTO `role_has_permissions` VALUES (6, 1);
-INSERT INTO `role_has_permissions` VALUES (7, 1);
-INSERT INTO `role_has_permissions` VALUES (8, 1);
-INSERT INTO `role_has_permissions` VALUES (9, 1);
-INSERT INTO `role_has_permissions` VALUES (10, 1);
-INSERT INTO `role_has_permissions` VALUES (11, 1);
-INSERT INTO `role_has_permissions` VALUES (12, 1);
-INSERT INTO `role_has_permissions` VALUES (13, 1);
-INSERT INTO `role_has_permissions` VALUES (14, 1);
-INSERT INTO `role_has_permissions` VALUES (15, 1);
-INSERT INTO `role_has_permissions` VALUES (16, 1);
-INSERT INTO `role_has_permissions` VALUES (17, 1);
-INSERT INTO `role_has_permissions` VALUES (18, 1);
-INSERT INTO `role_has_permissions` VALUES (19, 1);
-INSERT INTO `role_has_permissions` VALUES (20, 1);
-INSERT INTO `role_has_permissions` VALUES (21, 1);
-INSERT INTO `role_has_permissions` VALUES (22, 1);
-INSERT INTO `role_has_permissions` VALUES (23, 1);
-INSERT INTO `role_has_permissions` VALUES (24, 1);
-INSERT INTO `role_has_permissions` VALUES (25, 1);
-INSERT INTO `role_has_permissions` VALUES (26, 1);
-INSERT INTO `role_has_permissions` VALUES (27, 1);
-INSERT INTO `role_has_permissions` VALUES (28, 1);
-INSERT INTO `role_has_permissions` VALUES (29, 1);
-INSERT INTO `role_has_permissions` VALUES (30, 1);
-INSERT INTO `role_has_permissions` VALUES (31, 1);
-INSERT INTO `role_has_permissions` VALUES (32, 1);
-INSERT INTO `role_has_permissions` VALUES (33, 1);
-INSERT INTO `role_has_permissions` VALUES (34, 1);
-INSERT INTO `role_has_permissions` VALUES (35, 1);
-INSERT INTO `role_has_permissions` VALUES (36, 1);
-INSERT INTO `role_has_permissions` VALUES (37, 1);
-INSERT INTO `role_has_permissions` VALUES (38, 1);
-INSERT INTO `role_has_permissions` VALUES (39, 1);
-INSERT INTO `role_has_permissions` VALUES (40, 1);
-INSERT INTO `role_has_permissions` VALUES (41, 1);
-INSERT INTO `role_has_permissions` VALUES (42, 1);
-INSERT INTO `role_has_permissions` VALUES (43, 1);
-INSERT INTO `role_has_permissions` VALUES (44, 1);
-INSERT INTO `role_has_permissions` VALUES (45, 1);
-INSERT INTO `role_has_permissions` VALUES (46, 1);
-INSERT INTO `role_has_permissions` VALUES (47, 1);
-INSERT INTO `role_has_permissions` VALUES (48, 1);
-INSERT INTO `role_has_permissions` VALUES (49, 1);
-INSERT INTO `role_has_permissions` VALUES (50, 1);
-INSERT INTO `role_has_permissions` VALUES (51, 1);
-INSERT INTO `role_has_permissions` VALUES (52, 1);
-INSERT INTO `role_has_permissions` VALUES (53, 1);
-INSERT INTO `role_has_permissions` VALUES (54, 1);
-INSERT INTO `role_has_permissions` VALUES (55, 1);
-INSERT INTO `role_has_permissions` VALUES (56, 1);
-INSERT INTO `role_has_permissions` VALUES (57, 1);
-INSERT INTO `role_has_permissions` VALUES (58, 1);
-INSERT INTO `role_has_permissions` VALUES (59, 1);
-INSERT INTO `role_has_permissions` VALUES (60, 1);
-INSERT INTO `role_has_permissions` VALUES (61, 1);
-INSERT INTO `role_has_permissions` VALUES (62, 1);
-INSERT INTO `role_has_permissions` VALUES (63, 1);
-INSERT INTO `role_has_permissions` VALUES (64, 1);
-INSERT INTO `role_has_permissions` VALUES (65, 1);
-INSERT INTO `role_has_permissions` VALUES (66, 1);
-INSERT INTO `role_has_permissions` VALUES (67, 1);
-INSERT INTO `role_has_permissions` VALUES (68, 1);
-INSERT INTO `role_has_permissions` VALUES (69, 1);
-INSERT INTO `role_has_permissions` VALUES (70, 1);
-INSERT INTO `role_has_permissions` VALUES (71, 1);
-INSERT INTO `role_has_permissions` VALUES (72, 1);
-INSERT INTO `role_has_permissions` VALUES (73, 1);
-INSERT INTO `role_has_permissions` VALUES (74, 1);
-INSERT INTO `role_has_permissions` VALUES (75, 1);
-INSERT INTO `role_has_permissions` VALUES (76, 1);
-INSERT INTO `role_has_permissions` VALUES (77, 1);
-INSERT INTO `role_has_permissions` VALUES (78, 1);
-INSERT INTO `role_has_permissions` VALUES (79, 1);
-INSERT INTO `role_has_permissions` VALUES (80, 1);
-INSERT INTO `role_has_permissions` VALUES (81, 1);
-INSERT INTO `role_has_permissions` VALUES (82, 1);
-INSERT INTO `role_has_permissions` VALUES (83, 1);
-INSERT INTO `role_has_permissions` VALUES (84, 1);
-INSERT INTO `role_has_permissions` VALUES (85, 1);
-INSERT INTO `role_has_permissions` VALUES (86, 1);
-INSERT INTO `role_has_permissions` VALUES (87, 1);
-INSERT INTO `role_has_permissions` VALUES (88, 1);
-INSERT INTO `role_has_permissions` VALUES (89, 1);
-INSERT INTO `role_has_permissions` VALUES (90, 1);
-INSERT INTO `role_has_permissions` VALUES (91, 1);
-INSERT INTO `role_has_permissions` VALUES (92, 1);
-INSERT INTO `role_has_permissions` VALUES (93, 1);
-INSERT INTO `role_has_permissions` VALUES (94, 1);
-INSERT INTO `role_has_permissions` VALUES (95, 1);
+INSERT INTO `role_has_permissions` VALUES (2522, 1);
+INSERT INTO `role_has_permissions` VALUES (2523, 1);
+INSERT INTO `role_has_permissions` VALUES (2524, 1);
+INSERT INTO `role_has_permissions` VALUES (2525, 1);
+INSERT INTO `role_has_permissions` VALUES (2526, 1);
+INSERT INTO `role_has_permissions` VALUES (2527, 1);
+INSERT INTO `role_has_permissions` VALUES (2528, 1);
+INSERT INTO `role_has_permissions` VALUES (2529, 1);
+INSERT INTO `role_has_permissions` VALUES (2530, 1);
+INSERT INTO `role_has_permissions` VALUES (2531, 1);
+INSERT INTO `role_has_permissions` VALUES (2532, 1);
+INSERT INTO `role_has_permissions` VALUES (2533, 1);
+INSERT INTO `role_has_permissions` VALUES (2534, 1);
+INSERT INTO `role_has_permissions` VALUES (2535, 1);
+INSERT INTO `role_has_permissions` VALUES (2536, 1);
+INSERT INTO `role_has_permissions` VALUES (2537, 1);
+INSERT INTO `role_has_permissions` VALUES (2538, 1);
+INSERT INTO `role_has_permissions` VALUES (2539, 1);
+INSERT INTO `role_has_permissions` VALUES (2540, 1);
+INSERT INTO `role_has_permissions` VALUES (2541, 1);
+INSERT INTO `role_has_permissions` VALUES (2542, 1);
+INSERT INTO `role_has_permissions` VALUES (2543, 1);
+INSERT INTO `role_has_permissions` VALUES (2544, 1);
+INSERT INTO `role_has_permissions` VALUES (2545, 1);
+INSERT INTO `role_has_permissions` VALUES (2546, 1);
+INSERT INTO `role_has_permissions` VALUES (2547, 1);
+INSERT INTO `role_has_permissions` VALUES (2548, 1);
+INSERT INTO `role_has_permissions` VALUES (2549, 1);
+INSERT INTO `role_has_permissions` VALUES (2550, 1);
+INSERT INTO `role_has_permissions` VALUES (2551, 1);
+INSERT INTO `role_has_permissions` VALUES (2552, 1);
+INSERT INTO `role_has_permissions` VALUES (2553, 1);
+INSERT INTO `role_has_permissions` VALUES (2554, 1);
+INSERT INTO `role_has_permissions` VALUES (2555, 1);
+INSERT INTO `role_has_permissions` VALUES (2556, 1);
+INSERT INTO `role_has_permissions` VALUES (2557, 1);
+INSERT INTO `role_has_permissions` VALUES (2558, 1);
+INSERT INTO `role_has_permissions` VALUES (2559, 1);
+INSERT INTO `role_has_permissions` VALUES (2560, 1);
+INSERT INTO `role_has_permissions` VALUES (2561, 1);
+INSERT INTO `role_has_permissions` VALUES (2562, 1);
+INSERT INTO `role_has_permissions` VALUES (2563, 1);
+INSERT INTO `role_has_permissions` VALUES (2564, 1);
+INSERT INTO `role_has_permissions` VALUES (2565, 1);
+INSERT INTO `role_has_permissions` VALUES (2566, 1);
+INSERT INTO `role_has_permissions` VALUES (2567, 1);
+INSERT INTO `role_has_permissions` VALUES (2568, 1);
+INSERT INTO `role_has_permissions` VALUES (2569, 1);
+INSERT INTO `role_has_permissions` VALUES (2570, 1);
+INSERT INTO `role_has_permissions` VALUES (2571, 1);
+INSERT INTO `role_has_permissions` VALUES (2572, 1);
+INSERT INTO `role_has_permissions` VALUES (2573, 1);
+INSERT INTO `role_has_permissions` VALUES (2574, 1);
+INSERT INTO `role_has_permissions` VALUES (2575, 1);
+INSERT INTO `role_has_permissions` VALUES (2576, 1);
+INSERT INTO `role_has_permissions` VALUES (2577, 1);
+INSERT INTO `role_has_permissions` VALUES (2578, 1);
+INSERT INTO `role_has_permissions` VALUES (2579, 1);
+INSERT INTO `role_has_permissions` VALUES (2580, 1);
+INSERT INTO `role_has_permissions` VALUES (2581, 1);
+INSERT INTO `role_has_permissions` VALUES (2582, 1);
+INSERT INTO `role_has_permissions` VALUES (2583, 1);
+INSERT INTO `role_has_permissions` VALUES (2584, 1);
+INSERT INTO `role_has_permissions` VALUES (2585, 1);
+INSERT INTO `role_has_permissions` VALUES (2586, 1);
+INSERT INTO `role_has_permissions` VALUES (2587, 1);
+INSERT INTO `role_has_permissions` VALUES (2588, 1);
+INSERT INTO `role_has_permissions` VALUES (2589, 1);
+INSERT INTO `role_has_permissions` VALUES (2590, 1);
+INSERT INTO `role_has_permissions` VALUES (2591, 1);
+INSERT INTO `role_has_permissions` VALUES (2592, 1);
+INSERT INTO `role_has_permissions` VALUES (2593, 1);
+INSERT INTO `role_has_permissions` VALUES (2594, 1);
+INSERT INTO `role_has_permissions` VALUES (2595, 1);
+INSERT INTO `role_has_permissions` VALUES (2596, 1);
+INSERT INTO `role_has_permissions` VALUES (2597, 1);
+INSERT INTO `role_has_permissions` VALUES (2598, 1);
+INSERT INTO `role_has_permissions` VALUES (2599, 1);
+INSERT INTO `role_has_permissions` VALUES (2600, 1);
+INSERT INTO `role_has_permissions` VALUES (2601, 1);
+INSERT INTO `role_has_permissions` VALUES (2602, 1);
+INSERT INTO `role_has_permissions` VALUES (2603, 1);
+INSERT INTO `role_has_permissions` VALUES (2604, 1);
+INSERT INTO `role_has_permissions` VALUES (2605, 1);
+INSERT INTO `role_has_permissions` VALUES (2606, 1);
+INSERT INTO `role_has_permissions` VALUES (2607, 1);
+INSERT INTO `role_has_permissions` VALUES (2608, 1);
+INSERT INTO `role_has_permissions` VALUES (2609, 1);
+INSERT INTO `role_has_permissions` VALUES (2610, 1);
+INSERT INTO `role_has_permissions` VALUES (2611, 1);
+INSERT INTO `role_has_permissions` VALUES (2612, 1);
+INSERT INTO `role_has_permissions` VALUES (2613, 1);
+INSERT INTO `role_has_permissions` VALUES (2614, 1);
+INSERT INTO `role_has_permissions` VALUES (2615, 1);
+INSERT INTO `role_has_permissions` VALUES (2616, 1);
+INSERT INTO `role_has_permissions` VALUES (2617, 1);
+INSERT INTO `role_has_permissions` VALUES (2618, 1);
+INSERT INTO `role_has_permissions` VALUES (2619, 1);
 
 -- ----------------------------
 -- Table structure for roles
@@ -1012,15 +1021,15 @@ CREATE TABLE `siswa`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of siswa
 -- ----------------------------
-INSERT INTO `siswa` VALUES (1, 'Siswa1', '1111111', 'L', NULL, NULL, NULL, NULL, NULL, 1, '2024-03-17 17:08:14', '2024-03-17 17:08:14');
-INSERT INTO `siswa` VALUES (2, 'Siswa2', '2222222', 'L', NULL, NULL, NULL, NULL, NULL, 2, '2024-03-17 17:08:35', '2024-03-17 17:08:49');
-INSERT INTO `siswa` VALUES (3, 'Siswa3', '3333333', 'L', NULL, NULL, NULL, NULL, NULL, 3, '2024-03-17 17:09:22', '2024-03-17 17:09:22');
-INSERT INTO `siswa` VALUES (4, 'Siswa4', '4444444', NULL, NULL, NULL, NULL, NULL, NULL, 1, '2024-03-19 07:35:26', '2024-03-19 07:41:47');
+INSERT INTO `siswa` VALUES (33, 'Siswa1', 'pq123', 'L', NULL, 'alamat siswa 1', NULL, 'orang tua siswa 1', NULL, 1, '2024-03-23 14:24:29', '2024-03-23 14:24:29');
+INSERT INTO `siswa` VALUES (34, 'Siswa2', 'pq124', 'P', NULL, 'alamat siswa 2', NULL, 'orang tua siswa 2', NULL, 2, '2024-03-23 14:24:29', '2024-03-23 14:24:29');
+INSERT INTO `siswa` VALUES (35, 'siswa3', 'pq125', 'P', NULL, 'alamat siswa 3', NULL, 'orang tua siswa 3', NULL, 3, '2024-03-23 14:24:29', '2024-03-23 14:24:29');
+INSERT INTO `siswa` VALUES (36, 'siswa4', 'pq126', 'L', NULL, 'alamat siswa 4', NULL, 'orang tua siswa 4', NULL, 1, '2024-03-23 14:24:29', '2024-03-23 14:24:29');
 
 -- ----------------------------
 -- Table structure for users
@@ -1037,11 +1046,12 @@ CREATE TABLE `users`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', 'admin@gmail.com', NULL, '$2y$10$98obJ2Vqau53Te9H2zrPcus2muLcgLDDeFWOjyhUiXfojCZ9eclSy', 'DO0K3791vV6ESJl3k9efLXFiBeYl4JZvpeHh0fPWfrYOCD3tm3qaa4QVa0ec', '2024-03-17 16:36:18', '2024-03-17 16:36:18');
+INSERT INTO `users` VALUES (1, 'admin', 'admin@gmail.com', NULL, '$2y$10$98obJ2Vqau53Te9H2zrPcus2muLcgLDDeFWOjyhUiXfojCZ9eclSy', 'kLo9K5YFAQeNnQXgu5W6GEeuUzptJ225H6O3pAi2r5jjn66SCciTEqtnXh2G', '2024-03-17 16:36:18', '2024-03-17 16:36:18');
+INSERT INTO `users` VALUES (5, 'nama tes', 'tes@gmail.com', NULL, '$2y$10$BNc188JXitRTtgMNJOZxd.g0dcNoB6PomhN7PMtSLh7.Bz5IiT3p6', NULL, '2024-03-23 10:25:43', '2024-03-23 10:25:43');
 
 SET FOREIGN_KEY_CHECKS = 1;

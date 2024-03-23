@@ -2,7 +2,7 @@
     <div class="col-12">
         <div class="navbar-header">
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="index.html"><img src="{{ secure_asset('backend/html/') }}/logo-megaduta.png"
+            <a class="navbar-brand" href="index.html"><img src="{{ asset('backend/html/') }}/logo-megaduta.png"
                     width="30" alt="Compass"><span class="m-l-10"><b>MEGADUTA v.1</b></span></a>
         </div>
         <ul class="nav navbar-nav navbar-left">
@@ -170,8 +170,7 @@
                 <a href="javascript:void(0);" class="fullscreen hidden-sm-down" data-provide="fullscreen"
                     data-close="true"><i class="zmdi zmdi-fullscreen"></i></a>
             </li>
-            <li><a href="{{ secure_url('/login') }}" class="mega-menu" data-close="true"><i
-                        class="zmdi zmdi-power"></i></a>
+            <li><a href="{{ url('/login') }}" class="mega-menu" data-close="true"><i class="zmdi zmdi-power"></i></a>
             </li>
             <li class=""><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i
                         class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>

@@ -21,19 +21,17 @@
 
     <title>@yield('title')</title>
     <!-- BEGIN: CSS Assets-->
-    <link rel="stylesheet" href="{{ secure_asset('backend') }}/dist/css/app.css" />
+    <link rel="stylesheet" href="{{ asset('backend') }}/dist/css/app.css" />
     <!-- END: CSS Assets-->
 
-    <link href="{{ secure_asset('plugins/nestable/jquery-nestable.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ secure_asset('library/select2-develop/dist/css/select2.min.css') }}">
-    <link rel="stylesheet"
-        href="{{ secure_asset('library/select2-bootstrap-theme-master/dist/select2-bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('library/') }}/DataTables/datatables.min.css">
+    <link href="{{ asset('plugins/nestable/jquery-nestable.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('library/select2-develop/dist/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/select2-bootstrap-theme-master/dist/select2-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/') }}/DataTables/datatables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="{{ secure_asset('library/photoviewer-master/dist/photoviewer.min.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('library/fontawesome-free-6.5.1-web/css/all.min.css') }}">
-    <link rel="shortcut icon" href="{{ secure_asset('upload/settings/icon/' . $setting->icon_settings) }}"
-        type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('library/photoviewer-master/dist/photoviewer.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/fontawesome-free-6.5.1-web/css/all.min.css') }}">
+    <link rel="shortcut icon" href="{{ asset('upload/settings/icon/' . $setting->icon_settings) }}" type="image/x-icon">
 
     <style>
         .my-popup-class {
@@ -92,6 +90,7 @@
 <!-- END: Head -->
 
 @php
+
     $structureTree = UtilsHelp::createStructureTree();
     $hiddenTree = UtilsHelp::handleSidebar($structureTree);
 
@@ -101,6 +100,22 @@
 @endphp
 
 <body class="py-5 md:py-0 bg-black/[0.15] dark:bg-transparent">
+    <div style="position: fixed; 
+    width: 100%; 
+    height: 100%; 
+    background-color:rgba(0, 0, 0, 0.3); 
+    z-index: 999999999;"
+        class="loading-process hidden">
+        <div
+            style="position: relative; width: 100%; height: 100%; display:flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div>
+                <i data-loading-icon="spinning-circles" class="w-8 h-8"></i>
+            </div>
+            <div class="mt-3">
+                <h1 class="text-white">Loading Process...</h1>
+            </div>
+        </div>
+    </div>
     <!-- BEGIN: Mobile Menu -->
     <x-partials.mobile sidebar="{!! $outputSidebar !!}"></x-partials.mobile>
     <!-- END: Mobile Menu -->
@@ -129,23 +144,23 @@
 
     <!-- BEGIN: JS Assets-->
     <script
-        src="{{ secure_asset('backend/') }}/developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+        src="{{ asset('backend/') }}/developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
-    <script src="{{ secure_asset('backend') }}/dist/js/app.js"></script>
-    <script src="{{ secure_asset('plugins/chartjs/Chart.js') }}"></script>
+    <script src="{{ asset('backend') }}/dist/js/app.js"></script>
+    <script src="{{ asset('plugins/chartjs/Chart.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <!-- END: JS Assets-->
 
-    <script src="{{ secure_asset('plugins/nestable/jquery.nestable.js') }}"></script>
-    <script src="{{ secure_asset('plugins/js/pages/ui/sortable-nestable.js') }}"></script>
-    <script src="{{ secure_asset('library/select2-develop/dist/js/select2.min.js') }}"></script>
-    <script src="{{ secure_asset('js/utils.js') }}"></script>
-    <script src="{{ secure_asset('js/modal.js') }}"></script>
-    <script src="{{ secure_asset('library/') }}/DataTables/datatables.min.js"></script>
-    <script src="{{ secure_asset('library/photoviewer-master/dist/photoviewer.min.js') }}"></script>
-    <script src="{{ secure_asset('library/ckeditor/ckeditor.js') }}"></script>
-    <script src="{{ secure_asset('plugins/autonumeric/dist/autoNumeric.min.js') }}"></script>
+    <script src="{{ asset('plugins/nestable/jquery.nestable.js') }}"></script>
+    <script src="{{ asset('plugins/js/pages/ui/sortable-nestable.js') }}"></script>
+    <script src="{{ asset('library/select2-develop/dist/js/select2.min.js') }}"></script>
+    <script src="{{ asset('js/utils.js') }}"></script>
+    <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('library/') }}/DataTables/datatables.min.js"></script>
+    <script src="{{ asset('library/photoviewer-master/dist/photoviewer.min.js') }}"></script>
+    <script src="{{ asset('library/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('plugins/autonumeric/dist/autoNumeric.min.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>

@@ -12,7 +12,7 @@
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
             <button class="btn btn-primary shadow-md mr-2 btn-add"
-                data-url="{{ secure_url('master/nilaiSiswa/create?siswa_id=' . $siswa->id) }}">Tambah
+                data-url="{{ url('master/nilaiSiswa/create?siswa_id=' . $siswa->id) }}">Tambah
                 Data</button>
         </div>
 
@@ -22,13 +22,13 @@
                     <td>
                         <table class="w-full">
                             <tr>
-                                <td>NISN</td>
-                                <td>:</td>
+                                <td style="width: 20%;">NISN</td>
+                                <td style="width: 1%;">:</td>
                                 <td>{{ $siswa->nisn_siswa }}</td>
                             </tr>
                             <tr>
-                                <td>Kelas</td>
-                                <td>:</td>
+                                <td style="width: 20%;">Kelas</td>
+                                <td style="width: 1%;">:</td>
                                 <td>
                                     <strong>{{ $siswa->kelas->nama_kelas }}</strong>
                                 </td>
@@ -38,13 +38,13 @@
                     <td>
                         <table class="w-full">
                             <tr>
-                                <td>Nama</td>
-                                <td>:</td>
+                                <td style="width: 20%;">Nama</td>
+                                <td style="width: 1%;">:</td>
                                 <td>{{ $siswa->nama_siswa }}</td>
                             </tr>
                             <tr>
-                                <td>No. HP</td>
-                                <td>:</td>
+                                <td style="width: 20%;">No. HP</td>
+                                <td style="width: 1%;">:</td>
                                 <td>{{ $siswa->notelpon_siswa }}</td>
                             </tr>
                         </table>
@@ -75,7 +75,7 @@
 
 
     @push('custom_js')
-        <script class="url_datatable" data-url="{{ secure_url('master/nilaiSiswa?siswa_id=' . $siswa->id) }}"></script>
-        <script src="{{ secure_asset('js/master/nilaiSiswa/index.js') }}"></script>
+        <script class="url_datatable" data-url="{{ url('master/nilaiSiswa?siswa_id=' . $siswa->id) }}"></script>
+        <script src="{{ asset('js/master/nilaiSiswa/index.js') }}"></script>
     @endpush
 </x-backend-layout>

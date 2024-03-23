@@ -25,7 +25,8 @@ class Siswa extends Model
     {
         $siswa = Siswa::selectRaw('*, CASE WHEN jeniskelamin_siswa = "L" THEN "Laki-laki" ELSE "Perempuan" END AS jeniskelamin_siswa')
             ->with(['kelas', 'nilaiSiswa' => function ($query) {
-                $query->orderBy('id', 'desc');
+                $query->where('status_nsiswa', true)
+                    ->orderBy('id', 'desc');
             }]);
         return $siswa;
     }

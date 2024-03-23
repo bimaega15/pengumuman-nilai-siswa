@@ -11,8 +11,7 @@
     </h2>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
-            <button class="btn btn-primary shadow-md mr-2 btn-add"
-                data-url="{{ secure_url('setting/users/create') }}">Tambah
+            <button class="btn btn-primary shadow-md mr-2 btn-add" data-url="{{ url('setting/users/create') }}">Tambah
                 Data</button>
         </div>
 
@@ -42,8 +41,8 @@
 
 
     @push('custom_js')
-        <script class="url_datatable" data-url="{{ secure_url('setting/users') }}"></script>
-        <script class="url_root" data-url="{{ secure_url('/') }}"></script>
-        <script src="{{ secure_asset('js/setting/users/index.js') }}"></script>
+        <script class="url_datatable" data-url="{{ url('setting/users') }}"></script>
+        <script class="url_root" data-url="{{ url('/') }}"></script>
+        <script src="{{ asset('js/setting/users/index.js') }}"></script>
     @endpush
 </x-backend-layout>

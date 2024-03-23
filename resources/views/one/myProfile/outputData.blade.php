@@ -4,11 +4,11 @@
             <div class="box p-5">
                 <h6 class="font-bold mb-2"> <i class="fas fa-image"></i> Gambar Profile</h6>
                 <hr>
-                <a class="photoviewer mt-2" href="{{ secure_asset('upload/profile/' . $profile->profile->gambar_profile) }}"
+                <a class="photoviewer mt-2" href="{{ asset('upload/profile/' . $profile->profile->gambar_profile) }}"
                     data-gallery="photoviewer"
-                    data-title="{{ secure_asset('upload/profile/' . $profile->profile->gambar_profile) }}" target="_blank">
-                    <img src="{{ secure_asset('upload/profile/' . $profile->profile->gambar_profile) }}"
-                        alt="Upload gambar" height="100px" class="rounded">
+                    data-title="{{ asset('upload/profile/' . $profile->profile->gambar_profile) }}" target="_blank">
+                    <img src="{{ asset('upload/profile/' . $profile->profile->gambar_profile) }}" alt="Upload gambar"
+                        height="100px" class="rounded">
                 </a>
             </div>
         </div>

@@ -9,11 +9,11 @@
         </p>
     </header>
 
-    <form id="send-verification" method="post" action="{{ secure_url('email/verification-notificatio') }}">
+    <form id="send-verification" method="post" action="{{ url('email/verification-notificatio') }}">
         @csrf
     </form>
 
-    <form method="post" action="{{ secure_url('profile/update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ url('profile/update') }}" class="mt-6 space-y-6">
         @csrf
         @method('patch')
 

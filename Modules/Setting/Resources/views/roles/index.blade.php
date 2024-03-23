@@ -11,8 +11,7 @@
     </h2>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
-            <button class="btn btn-primary shadow-md mr-2 btn-add"
-                data-url="{{ secure_url('setting/roles/create') }}">Tambah
+            <button class="btn btn-primary shadow-md mr-2 btn-add" data-url="{{ url('setting/roles/create') }}">Tambah
                 Data</button>
         </div>
 
@@ -37,7 +36,7 @@
 
 
     @push('custom_js')
-        <script class="url_datatable" data-url="{{ secure_url('setting/roles') }}"></script>
-        <script src="{{ secure_asset('js/setting/roles/index.js') }}"></script>
+        <script class="url_datatable" data-url="{{ url('setting/roles') }}"></script>
+        <script src="{{ asset('js/setting/roles/index.js') }}"></script>
     @endpush
 </x-backend-layout>

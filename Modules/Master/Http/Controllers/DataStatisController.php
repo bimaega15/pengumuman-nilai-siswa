@@ -49,7 +49,7 @@ class DataStatisController extends Controller
                     ';
                     $buttonDelete = '';
                     $buttonDelete = '
-                    <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . secure_url('master/dataStatis/' . $row->id . '?_method=delete') . '">
+                    <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . url('master/dataStatis/' . $row->id . '?_method=delete') . '">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                     ';

@@ -5,10 +5,10 @@
         @if (isset($settings))
             @if ($settings != null)
                 <div id="load_logo_settings">
-                    <a class="photoviewer" href="{{ secure_asset('upload/settings/logo/' . $settings->logo_settings) }}"
+                    <a class="photoviewer" href="{{ asset('upload/settings/logo/' . $settings->logo_settings) }}"
                         data-gallery="photoviewer" data-title="{{ $settings->logo_settings }}" target="_blank">
-                        <img src="{{ secure_asset('upload/settings/logo/' . $settings->logo_settings) }}"
-                            alt="Upload gambar" style="max-width: 50%;" class="rounded">
+                        <img src="{{ asset('upload/settings/logo/' . $settings->logo_settings) }}" alt="Upload gambar"
+                            style="max-width: 50%;" class="rounded">
                     </a>
                 </div>
             @endif
@@ -20,10 +20,10 @@
         @if (isset($settings))
             @if ($settings != null)
                 <div id="load_icon_settings">
-                    <a class="photoviewer" href="{{ secure_asset('upload/settings/icon/' . $settings->icon_settings) }}"
+                    <a class="photoviewer" href="{{ asset('upload/settings/icon/' . $settings->icon_settings) }}"
                         data-gallery="photoviewer" data-title="{{ $settings->icon_settings }}" target="_blank">
-                        <img src="{{ secure_asset('upload/settings/icon/' . $settings->icon_settings) }}"
-                            alt="Upload gambar" style="max-width: 50%;" class="rounded">
+                        <img src="{{ asset('upload/settings/icon/' . $settings->icon_settings) }}" alt="Upload gambar"
+                            style="max-width: 50%;" class="rounded">
                     </a>
                 </div>
             @endif
@@ -36,9 +36,9 @@
             @if ($settings != null)
                 <div id="load_perusahaan_settings">
                     <a class="photoviewer"
-                        href="{{ secure_asset('upload/settings/perusahaan/' . $settings->perusahaan_settings) }}"
+                        href="{{ asset('upload/settings/perusahaan/' . $settings->perusahaan_settings) }}"
                         data-gallery="photoviewer" data-title="{{ $settings->perusahaan_settings }}" target="_blank">
-                        <img src="{{ secure_asset('upload/settings/perusahaan/' . $settings->perusahaan_settings) }}"
+                        <img src="{{ asset('upload/settings/perusahaan/' . $settings->perusahaan_settings) }}"
                             alt="Upload gambar" style="max-width: 50%;" class="rounded">
                     </a>
                 </div>

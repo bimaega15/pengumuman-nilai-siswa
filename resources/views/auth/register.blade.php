@@ -22,7 +22,7 @@
                 <div class="account-title">
                     <h2>Registration</h2>
                 </div>
-                <form method="post" action="{{ secure_url('register') }}">
+                <form method="post" action="{{ url('register') }}">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">

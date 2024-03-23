@@ -11,19 +11,28 @@
     </h2>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
-            <button type="button" class="btn btn-primary shadow-md mr-2 btn-import" data-tw-toggle="modal"
+            <button type="button" class="btn btn-warning shadow-md mr-2 btn-import" data-tw-toggle="modal"
                 data-tw-target="#modal-import">Import Data</button>
-            <button class="btn btn-primary shadow-md mr-2 btn-add"
-                data-url="{{ secure_url('master/siswa/create') }}">Tambah
+            <button class="btn btn-primary shadow-md mr-2 btn-add" data-url="{{ url('master/siswa/create') }}">Tambah
                 Data</button>
+            <button class="btn btn-danger shadow-md mr-2 btn-delete-all"
+                data-url="{{ url('master/siswa/deleteAll') }}">Delete Data</button>
         </div>
+
 
         <!-- BEGIN: Data List -->
         <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
-            <table class="table table-report -mt-2" id="dataTable">
+            <table class="table table-report -mt-2" id="dataTable" style="width: 100%;">
                 <thead>
                     <tr>
                         <th class="whitespace-nowrap">NO.</th>
+                        <th class="whitespace-nowrap">
+                            <div class="form-check mt-2">
+                                <input id="checkbox_all" class="form-check-input" type="checkbox" value="1"
+                                    style="border: 1px solid black;">
+                                <label class="form-check-label" for="checkbox_all"></label>
+                            </div>
+                        </th>
                         <th class="whitespace-nowrap">NAMA SISWA</th>
                         <th class="whitespace-nowrap">NISN</th>
                         <th class="whitespace-nowrap">JENIS KELAMIN</th>
@@ -41,7 +50,7 @@
 
     <div id="modal_import" class="modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
-            <form action="{{ secure_url('master/master/siswa/import/data') }}" method="post" id="form-submit-import">
+            <form action="{{ url('master/master/siswa/import/data') }}" method="post" id="form-submit-import">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h2 class="font-medium text-base mr-auto">
@@ -70,7 +79,8 @@
 
 
     @push('custom_js')
-        <script class="url_datatable" data-url="{{ secure_url('master/siswa') }}"></script>
-        <script src="{{ secure_asset('js/master/siswa/index.js') }}"></script>
+        <script class="url_datatable" data-url="{{ url('master/siswa') }}"></script>
+        <script class="url_deleteall_siswa" data-url="{{ url('master/siswa/deleteAll') }}"></script>
+        <script src="{{ asset('js/master/siswa/index.js') }}"></script>
     @endpush
 </x-backend-layout>

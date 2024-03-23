@@ -145,12 +145,12 @@ class UtilsHelper
             $urlUri = UtilsHelper::getUrlPermission();
             if (isset($urlUri[$menuData->link_menu])) {
                 $convertData = $urlUri[$menuData->link_menu];
-                $itemId = $item['id'];
 
                 $getDataPermission = Permission::where('name', 'like', '%' . $convertData . '%')->first();
                 if ($getDataPermission == null) {
                     continue;
                 }
+
 
                 $checkPermission = Auth::user()->hasPermissionTo($convertData);
                 if (!$checkPermission) {
@@ -182,6 +182,7 @@ class UtilsHelper
     
                 ';
             } elseif ($item['children'] !== null && ($parentId === null || in_array($item['id'], $parentId))) {
+
                 $hasVisibleChildren = false;
 
                 // Loop melalui anak-anak untuk memeriksa izin dan menghitung yang visible
@@ -191,7 +192,6 @@ class UtilsHelper
                     if (isset($urlUri[$childMenuData->link_menu])) {
                         $childConvertData = $urlUri[$childMenuData->link_menu];
                         $childCheckPermission = Auth::user()->hasPermissionTo($childConvertData);
-
                         if ($childCheckPermission) {
                             $hasVisibleChildren = true;
                             break;
@@ -253,7 +253,7 @@ class UtilsHelper
                 </a>
                 ';
             $buttonDelete = '
-                <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . secure_url('master/menu/' . $menu_item->id . '?_method=delete') . '" style="padding: 5px 5px;">
+                <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . url('master/menu/' . $menu_item->id . '?_method=delete') . '" style="padding: 5px 5px;">
                     <i class="fa-solid fa-trash"></i>
                 </button>
                 ';

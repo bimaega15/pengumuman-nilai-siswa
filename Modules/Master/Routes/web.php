@@ -11,7 +11,9 @@
 |
 */
 
-Route::prefix('master')->middleware('auth')->group(function () {
+use Modules\Master\Http\Middleware\MiddlewareDataStatis;
+
+Route::prefix('master')->middleware(['auth', 'authorization_route'])->group(function () {
     Route::get('/', 'MasterController@index');
 
     Route::group(['prefix' => 'dataStatis'], function () {
@@ -39,6 +41,7 @@ Route::prefix('master')->middleware('auth')->group(function () {
 
     Route::resource('kelas', 'KelasController');
     Route::resource('siswa', 'SiswaController');
+    Route::post('siswa/deleteAll', 'SiswaController@deleteAll')->name('siswa.deleteAll');
     Route::post('master/siswa/import/data', 'SiswaController@import')->name('siswa.import');
     Route::resource('nilaiSiswa', 'NilaiSiswaController');
 });

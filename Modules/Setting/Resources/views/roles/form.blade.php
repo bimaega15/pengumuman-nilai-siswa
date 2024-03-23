@@ -1,7 +1,7 @@
 @if (isset($roles))
-    <form method="post" action="{{ secure_url('setting/roles/' . $roles->id . '?_method=put') }}" id="form-submit">
+    <form method="post" action="{{ url('setting/roles/' . $roles->id . '?_method=put') }}" id="form-submit">
     @else
-        <form method="post" action="{{ secure_url('setting/roles') }}" id="form-submit">
+        <form method="post" action="{{ url('setting/roles') }}" id="form-submit">
 @endif
 <x-modal.modal-body>
     <div class="col-span-12 sm:col-span-12 mb-2">
@@ -23,4 +23,4 @@
 </x-modal.modal-footer>
 </form>
 
-<script type="text/javascript" src="{{ secure_asset('js/setting/roles/form.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/setting/roles/form.js') }}"></script>

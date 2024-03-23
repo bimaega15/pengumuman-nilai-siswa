@@ -110,7 +110,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar4.jpg" alt="">
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar4.jpg" alt="">
                                     <div class="media-body">
                                         <span class="name">Sophia</span>
                                         <span class="message">There are many variations of passages of Lorem Ipsum
@@ -124,7 +124,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar5.jpg" alt="">
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar5.jpg" alt="">
                                     <div class="media-body">
                                         <span class="name">Grayson</span>
                                         <span class="message">All the Lorem Ipsum generators on the</span>
@@ -137,7 +137,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar2.jpg" alt="">
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar2.jpg" alt="">
                                     <div class="media-body">
                                         <span class="name">Isabella</span>
                                         <span class="message">Contrary to popular belief, Lorem Ipsum</span>
@@ -150,7 +150,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar1.jpg" alt="">
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar1.jpg" alt="">
                                     <div class="media-body">
                                         <span class="name">John</span>
                                         <span class="message">It is a long established fact that a reader</span>
@@ -163,7 +163,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar3.jpg"
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar3.jpg"
                                         alt="">
                                     <div class="media-body">
                                         <span class="name">Alexander</span>
@@ -182,7 +182,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar10.jpg"
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar10.jpg"
                                         alt="">
                                     <div class="media-body">
                                         <span class="badge badge-outline status"></span>
@@ -194,7 +194,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar6.jpg"
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar6.jpg"
                                         alt="">
                                     <div class="media-body">
                                         <span class="badge badge-outline status"></span>
@@ -206,7 +206,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar7.jpg"
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar7.jpg"
                                         alt="">
                                     <div class="media-body">
                                         <span class="badge badge-outline status"></span>
@@ -218,7 +218,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar8.jpg"
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar8.jpg"
                                         alt="">
                                     <div class="media-body">
                                         <span class="badge badge-outline status"></span>
@@ -230,7 +230,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar9.jpg"
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar9.jpg"
                                         alt="">
                                     <div class="media-body">
                                         <span class="badge badge-outline status"></span>
@@ -242,7 +242,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar5.jpg"
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar5.jpg"
                                         alt="">
                                     <div class="media-body">
                                         <span class="badge badge-outline status"></span>
@@ -254,7 +254,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar4.jpg"
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar4.jpg"
                                         alt="">
                                     <div class="media-body">
                                         <span class="badge badge-outline status"></span>
@@ -266,7 +266,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar3.jpg"
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar3.jpg"
                                         alt="">
                                     <div class="media-body">
                                         <span class="badge badge-outline status"></span>
@@ -278,7 +278,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar2.jpg"
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar2.jpg"
                                         alt="">
                                     <div class="media-body">
                                         <span class="badge badge-outline status"></span>
@@ -290,7 +290,7 @@
                             <a href="javascript:void(0);">
                                 <div class="media">
                                     <img class="media-object "
-                                        src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar1.jpg"
+                                        src="{{ asset('backend/html/') }}/assets/images/xs/avatar1.jpg"
                                         alt="">
                                     <div class="media-body">
                                         <span class="badge badge-outline status"></span>
@@ -358,13 +358,13 @@
                         <ul class="list-unstyled team-info">
                             <li class="m-r-15"><small>Team</small></li>
                             <li>
-                                <img src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar2.jpg" alt="Avatar">
+                                <img src="{{ asset('backend/html/') }}/assets/images/xs/avatar2.jpg" alt="Avatar">
                             </li>
                             <li>
-                                <img src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar3.jpg" alt="Avatar">
+                                <img src="{{ asset('backend/html/') }}/assets/images/xs/avatar3.jpg" alt="Avatar">
                             </li>
                             <li>
-                                <img src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar4.jpg" alt="Avatar">
+                                <img src="{{ asset('backend/html/') }}/assets/images/xs/avatar4.jpg" alt="Avatar">
                             </li>
                         </ul>
                     </div>
@@ -379,19 +379,19 @@
                         <ul class="list-unstyled team-info">
                             <li class="m-r-15"><small>Team</small></li>
                             <li>
-                                <img src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar10.jpg" alt="Avatar">
+                                <img src="{{ asset('backend/html/') }}/assets/images/xs/avatar10.jpg" alt="Avatar">
                             </li>
                             <li>
-                                <img src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar9.jpg" alt="Avatar">
+                                <img src="{{ asset('backend/html/') }}/assets/images/xs/avatar9.jpg" alt="Avatar">
                             </li>
                             <li>
-                                <img src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar8.jpg" alt="Avatar">
+                                <img src="{{ asset('backend/html/') }}/assets/images/xs/avatar8.jpg" alt="Avatar">
                             </li>
                             <li>
-                                <img src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar7.jpg" alt="Avatar">
+                                <img src="{{ asset('backend/html/') }}/assets/images/xs/avatar7.jpg" alt="Avatar">
                             </li>
                             <li>
-                                <img src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar6.jpg" alt="Avatar">
+                                <img src="{{ asset('backend/html/') }}/assets/images/xs/avatar6.jpg" alt="Avatar">
                             </li>
                         </ul>
                     </div>
@@ -406,13 +406,13 @@
                         <ul class="list-unstyled team-info">
                             <li class="m-r-15"><small>Team</small></li>
                             <li>
-                                <img src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar5.jpg" alt="Avatar">
+                                <img src="{{ asset('backend/html/') }}/assets/images/xs/avatar5.jpg" alt="Avatar">
                             </li>
                             <li>
-                                <img src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar2.jpg" alt="Avatar">
+                                <img src="{{ asset('backend/html/') }}/assets/images/xs/avatar2.jpg" alt="Avatar">
                             </li>
                             <li>
-                                <img src="{{ secure_asset('backend/html/') }}/assets/images/xs/avatar7.jpg" alt="Avatar">
+                                <img src="{{ asset('backend/html/') }}/assets/images/xs/avatar7.jpg" alt="Avatar">
                             </li>
                         </ul>
                     </div>

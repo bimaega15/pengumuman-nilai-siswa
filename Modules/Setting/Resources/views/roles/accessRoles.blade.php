@@ -23,7 +23,7 @@
                         <td>
                             <input type="checkbox" id="id_{{ $item->id }}"
                                 class="form-checkbox h-5 w-5 text-blue-600 check-input-roles"
-                                data-id="{{ $item->id }}" data-url="{{ secure_url('setting/assignRoles') }}"
+                                data-id="{{ $item->id }}" data-url="{{ url('setting/assignRoles') }}"
                                 data-role_id="{{ $role->id }}" value="{{ $item->id }}"
                                 {{ $role->hasPermissionTo($item->name) ? 'checked' : '' }}>
                             <label class="ml-2 text-gray-700" for="id_{{ $item->id }}"></label>
@@ -43,4 +43,4 @@
         </button>
     </div>
 </x-modal.modal-footer>
-<script type="text/javascript" src="{{ secure_asset('js/setting/assignRoles/form.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/setting/assignRoles/form.js') }}"></script>

@@ -32,7 +32,7 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 });
 require __DIR__ . '/auth.php';
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'authorization_route']], function () {
     Route::get('/myProfile', [MyProfileController::class, 'index'])->name('myProfile.index');
     Route::get('/myProfile/{id}/edit', [MyProfileController::class, 'edit'])->name('myProfile.edit');
     Route::put('/myProfile/{id}/update', [MyProfileController::class, 'update'])->name('myProfile.update');

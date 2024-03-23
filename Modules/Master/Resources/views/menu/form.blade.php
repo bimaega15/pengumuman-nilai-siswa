@@ -1,7 +1,7 @@
 @if (isset($menu))
-    <form method="post" action="{{ secure_url('master/menu/' . $menu->id . '?_method=put') }}" id="form-submit">
+    <form method="post" action="{{ url('master/menu/' . $menu->id . '?_method=put') }}" id="form-submit">
     @else
-        <form method="post" action="{{ secure_url('master/menu') }}" id="form-submit">
+        <form method="post" action="{{ url('master/menu') }}" id="form-submit">
 @endif
 <x-modal.modal-body>
     <div class="col-span-12 sm:col-span-6 mb-2">
@@ -88,8 +88,8 @@
 </x-modal.modal-footer>
 </form>
 
-<script class="url_datatable" data-url="{{ secure_url('master/menu/dataTable') }}"></script>
+<script class="url_datatable" data-url="{{ url('master/menu/dataTable') }}"></script>
 <script class="data_datatable"
     data-table="{{ isset($menu) ? ($menu->children_menu != null ? $menuChildren : '') : '' }}"></script>
-<script class="url_choosemenu" data-url="{{ secure_url('master/menu/chooseMenu') }}"></script>
-<script type="text/javascript" src="{{ secure_asset('js/master/menu/form.js') }}"></script>
+<script class="url_choosemenu" data-url="{{ url('master/menu/chooseMenu') }}"></script>
+<script type="text/javascript" src="{{ asset('js/master/menu/form.js') }}"></script>

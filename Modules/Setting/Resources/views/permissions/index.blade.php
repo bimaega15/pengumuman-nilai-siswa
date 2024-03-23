@@ -12,7 +12,7 @@
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
             <button class="btn btn-primary shadow-md mr-2 btn-add"
-                data-url="{{ secure_url('setting/permissions/create') }}">Tambah Data</button>
+                data-url="{{ url('setting/permissions/create') }}">Tambah Data</button>
         </div>
 
         <!-- BEGIN: Data List -->
@@ -35,7 +35,7 @@
 
 
     @push('custom_js')
-        <script class="url_datatable" data-url="{{ secure_url('setting/permissions') }}"></script>
-        <script src="{{ secure_asset('js/setting/permissions/index.js') }}"></script>
+        <script class="url_datatable" data-url="{{ url('setting/permissions') }}"></script>
+        <script src="{{ asset('js/setting/permissions/index.js') }}"></script>
     @endpush
 </x-backend-layout>

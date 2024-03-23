@@ -14,6 +14,6 @@
         </div>
     </div>
 </div>
-<script class="url_rendermenu_form" data-url="{{ secure_url('master/menu/renderTree') }}"></script>
-<script class="url_sortAndNested" data-url="{{ secure_url('master/menu/sortAndNested') }}"></script>
-<script src="{{ secure_asset('js/master/menu/nested.js') }}"></script>
+<script class="url_rendermenu_form" data-url="{{ url('master/menu/renderTree') }}"></script>
+<script class="url_sortAndNested" data-url="{{ url('master/menu/sortAndNested') }}"></script>
+<script src="{{ asset('js/master/menu/nested.js') }}"></script>

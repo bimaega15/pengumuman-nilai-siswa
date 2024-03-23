@@ -18,36 +18,51 @@
                         <td>
                             <table class="w-100 mb-0">
                                 <tr>
-                                    <td class="text-dark">NISN</td>
-                                    <td class="text-dark">:</td>
+                                    <td class="text-dark" style="width: 30%;">NISN</td>
+                                    <td class="text-dark" style="width: 1%;">:</td>
                                     <td class="text-dark">{{ $getSiswa->nisn_siswa }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-dark">Nama Siswa</td>
-                                    <td class="text-dark">:</td>
+                                    <td class="text-dark" style="width: 30%;">Nama Siswa</td>
+                                    <td class="text-dark" style="width: 1%;">:</td>
                                     <td class="text-dark">{{ $getSiswa->nama_siswa }}</td>
                                 </tr>
+                                <tr>
+                                    <td class="text-dark" style="width: 30%;">Kelas</td>
+                                    <td class="text-dark" style="width: 1%;">:</td>
+                                    <td class="text-dark">{{ $getSiswa->kelas->nama_kelas }}</td>
+                                </tr>
+
+                            </table>
+                        </td>
+                        <td style="vertical-align: top;">
+                            <table class="w-100 mb-0">
                                 @if ($getSiswa->jeniskelamin_siswa)
                                     <tr>
-                                        <td class="text-dark">Jenis kelamin</td>
-                                        <td class="text-dark">:</td>
+                                        <td class="text-dark" style="width: 30%;">Jenis kelamin</td>
+                                        <td class="text-dark" style="width: 1%;">:</td>
                                         <td class="text-dark">{{ $getSiswa->jeniskelamin_siswa }}</td>
                                     </tr>
                                 @endif
-                            </table>
-                        </td>
-                        <td>
-                            <table class="w-100 mb-0">
-                                <tr>
-                                    <td class="text-dark">Kelas</td>
-                                    <td class="text-dark">:</td>
-                                    <td class="text-dark">{{ $getSiswa->kelas->nama_kelas }}</td>
-                                </tr>
                                 @if ($getSiswa->email_siswa)
                                     <tr>
-                                        <td class="text-dark">Email</td>
-                                        <td class="text-dark">:</td>
+                                        <td class="text-dark" style="width: 30%;">Email</td>
+                                        <td class="text-dark" style="width: 1%;">:</td>
                                         <td class="text-dark">{{ $getSiswa->email_siswa }}</td>
+                                    </tr>
+                                @endif
+                                @if ($getSiswa->alamat_siswa)
+                                    <tr>
+                                        <td class="text-dark" style="width: 30%;">Alamat</td>
+                                        <td class="text-dark" style="width: 1%;">:</td>
+                                        <td class="text-dark">{{ $getSiswa->alamat_siswa }}</td>
+                                    </tr>
+                                @endif
+                                @if ($getSiswa->namaorangtua_siswa)
+                                    <tr>
+                                        <td class="text-dark" style="width: 30%;">Orang Tua</td>
+                                        <td class="text-dark" style="width: 1%;">:</td>
+                                        <td class="text-dark">{{ $getSiswa->namaorangtua_siswa }}</td>
                                     </tr>
                                 @endif
                             </table>
@@ -107,7 +122,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" data-dismiss="modal" class="btn btn--primary shadow"
+            <button type="button" data-dismiss="modal" class="btn btn--primary shadow btn-ok-modal"
                 style="border-radius: 5px;">OK</button>
         </div>
     </div>

@@ -31,6 +31,7 @@ class SiswaController extends Controller
     }
     public function index(Request $request)
     {
+
         if ($request->ajax()) {
             $data = Siswa::getSiswa();
             return DataTables::eloquent($data)
@@ -43,13 +44,13 @@ class SiswaController extends Controller
                 ';
                     $buttonDelete = '';
                     $buttonDelete = '
-                <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . secure_url('master/siswa/' . $row->id . '?_method=delete') . '">
+                <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . url('master/siswa/' . $row->id . '?_method=delete') . '">
                     <i class="fa-solid fa-trash"></i>
                 </button>
                 ';
 
                     $buttonNilai = '';
-                    $buttonNilai = '<a href="' . secure_url('master/nilaiSiswa?siswa_id=' . $row->id) . '" class="btn btn-primary btn-sm" title="Nilai Siswa">
+                    $buttonNilai = '<a href="' . url('master/nilaiSiswa?siswa_id=' . $row->id) . '" class="btn btn-primary btn-sm" title="Nilai Siswa">
                 <i class="fa-solid fa-pen-to-square"></i>
             </a>';
 
@@ -69,7 +70,16 @@ class SiswaController extends Controller
                     ';
                     return $data;
                 })
-                ->rawColumns(['action', 'kelas'])
+                ->addColumn('delete_all', function ($row) {
+                    $data = '
+                    <div class="form-check mt-2">
+                        <input id="checkbox_item' . $row->id . '" class="form-check-input checkbox_item" type="checkbox" value="' . $row->id . '" style="border: 1px solid black;">
+                        <label class="form-check-label" for="checkbox_item' . $row->id . '"></label>
+                    </div>
+                    ';
+                    return $data;
+                })
+                ->rawColumns(['action', 'kelas', 'delete_all'])
                 ->toJson();
         }
         return view('master::siswa.index');
@@ -165,6 +175,13 @@ class SiswaController extends Controller
         return response()->json('Berhasil hapus data', 200);
     }
 
+    public function deleteAll(Request $request)
+    {
+        $siswa_id = json_decode($request->input('siswa_id'));
+        Siswa::destroy($siswa_id);
+        return response()->json('Berhasil hapus data ' . count($siswa_id), 200);
+    }
+
     public function import(CreateSiswaImportRequest $request)
     {
         try {
@@ -187,8 +204,12 @@ class SiswaController extends Controller
                     // kelas
                     $nisn_siswa = ($sheetData[$i][1]);
                     $nama_siswa = strtolower($sheetData[$i][2]);
-                    $nama_kelas = strtolower($sheetData[$i][3]);
-                    $nilai_nsiswa = strtolower($sheetData[$i][4]);
+                    $nama_siswa_original = $sheetData[$i][2];
+                    $jeniskelamin_siswa = strtolower($sheetData[$i][3]);
+                    $alamat_siswa = strtolower($sheetData[$i][4]);
+                    $namaorangtua_siswa = strtolower($sheetData[$i][5]);
+                    $nama_kelas = strtolower($sheetData[$i][6]);
+                    $nilai_nsiswa = $sheetData[$i][7];
 
                     $getKelas = Kelas::whereRaw('LOWER(nama_kelas) = ?', [strtolower($nama_kelas)])->get()->count();
                     $kelas_id = '';
@@ -205,16 +226,21 @@ class SiswaController extends Controller
                         $kelas_id = $insertKelas->id;
                     }
 
+                    $checkJk = preg_match('/l/i', $jeniskelamin_siswa);
+                    $jeniskelamin_siswa = $checkJk == 1 ? 'L' : 'P';
+
                     // siswa
                     $getSiswa = Siswa::whereRaw('LOWER(nisn_siswa) = ?', [strtolower($nisn_siswa)])->get()->count();
                     if ($getSiswa > 0) {
                         $getSiswa = Siswa::whereRaw('LOWER(nisn_siswa) = ?', [strtolower($nisn_siswa)])->first();
                         $siswa_id = $getSiswa->id;
                     } else {
-                        $nama_siswa = strtoupper($nama_siswa);
                         $insertSiswa = Siswa::create([
-                            'nama_siswa' => $nama_siswa,
+                            'nama_siswa' => $nama_siswa_original,
                             'nisn_siswa' => $nisn_siswa,
+                            'jeniskelamin_siswa' => $jeniskelamin_siswa,
+                            'alamat_siswa' => $alamat_siswa,
+                            'namaorangtua_siswa' => $namaorangtua_siswa,
                             'kelas_id' => $kelas_id,
                         ]);
                         $siswa_id = $insertSiswa->id;

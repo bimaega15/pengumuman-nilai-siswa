@@ -2,6 +2,7 @@
 
 namespace Modules\Setting\Http\Controllers;
 
+use App\Http\Helpers\UtilsHelper;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Contracts\Support\Renderable;
@@ -65,6 +66,24 @@ class AccessController extends Controller
                     $dataPermissions = $roles->permissions()->get()->pluck('name')->toArray();
                     $users->syncPermissions($dataPermissions);
                 }
+            }
+        }
+
+
+        // insert permission
+        $insertPermission = UtilsHelper::insertPermissions();
+        $permissions = UtilsHelper::getPermissions();
+        $user = $users;
+
+        foreach ($permissions as $key => $value) {
+            if (isset($user->roles[0])) {
+                $role_id = $user->roles[0]->id;
+                $role = Role::find($role_id);
+
+                $getDataPermission = $role->permissions()->get()->pluck('name')->toArray();
+                $data = $getDataPermission;
+                array_push($data, $value['name']);
+                $role->syncPermissions($data);
             }
         }
         return response('Berhasil menambahkan access', 200);

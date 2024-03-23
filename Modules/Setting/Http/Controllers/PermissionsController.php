@@ -32,7 +32,7 @@ class PermissionsController extends Controller
                     ';
                     $buttonDelete = '';
                     $buttonDelete = '
-                    <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . secure_url('setting/permissions/' . $row->id . '?_method=delete') . '">
+                    <button type="button" class="btn-delete btn btn-danger btn-sm" data-url="' . url('setting/permissions/' . $row->id . '?_method=delete') . '">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                     ';

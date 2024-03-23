@@ -12,7 +12,7 @@
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
             <button class="btn btn-primary shadow-md mr-2 btn-edit"
-                data-url="{{ secure_url('myProfile/' . $profile->id . '/edit') }}" data-id="{{ $profile->id }}">
+                data-url="{{ url('myProfile/' . $profile->id . '/edit') }}" data-id="{{ $profile->id }}">
                 Edit Data
             </button>
         </div>
@@ -22,7 +22,7 @@
 
 
     @push('custom_js')
-        <script class="url_data_profile" data-url="{{ secure_url('myProfile') }}"></script>
-        <script src="{{ secure_asset('js/myProfile/index.js') }}"></script>
+        <script class="url_data_profile" data-url="{{ url('myProfile') }}"></script>
+        <script src="{{ asset('js/myProfile/index.js') }}"></script>
     @endpush
 </x-backend-layout>

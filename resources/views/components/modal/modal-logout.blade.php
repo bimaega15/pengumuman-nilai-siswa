@@ -7,7 +7,7 @@
                         data-lucide="x" class="w-8 h-8 text-slate-400"></i>
                 </a>
             </div>
-            <form action="{{ secure_url('logout') }}" method="post">
+            <form action="{{ url('logout') }}" method="post">
                 @csrf
                 <div class="modal-body">
                     <p>Apakah anda yakin ingin keluar dari sistem ?</p>

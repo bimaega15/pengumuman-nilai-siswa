@@ -11,10 +11,9 @@
         Data Settings
     </h2>
     @if ($settings != null)
-        <form method="post" action="{{ secure_url('setting/settings/' . $settings->id . '?_method=put') }}"
-            id="form-submit">
+        <form method="post" action="{{ url('setting/settings/' . $settings->id . '?_method=put') }}" id="form-submit">
         @else
-            <form method="post" action="{{ secure_url('setting/settings') }}" id="form-submit">
+            <form method="post" action="{{ url('setting/settings') }}" id="form-submit">
     @endif
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="col-span-12 sm:col-span-12 mb-2">
@@ -61,13 +60,13 @@
 
 
     @push('custom_js')
-        <script class="url_datastatis_zonawaktu" data-url="{{ secure_url('master/dataStatis/parentStatis') }}"
+        <script class="url_datastatis_zonawaktu" data-url="{{ url('master/dataStatis/parentStatis') }}"
             data-jenisreferensi_datastatis="zona_waktu"></script>
-        <script class="url_settings" data-url="{{ secure_url('setting/settings/checkData') }}"></script>
-        <script class="url_root" data-url="{{ secure_url('/') }}"></script>
+        <script class="url_settings" data-url="{{ url('setting/settings/checkData') }}"></script>
+        <script class="url_root" data-url="{{ url('/') }}"></script>
         <script class="zona_waktu" data-zonawaktu_settings_id="{{ isset($zonawaktu_settings) ? $zonawaktu_settings->id : '' }}"
             data-zonawaktu_settings_nama="{{ isset($zonawaktu_settings) ? $zonawaktu_settings->nama_datastatis : '' }}">
         </script>
-        <script src="{{ secure_asset('js/setting/settings/index.js') }}"></script>
+        <script src="{{ asset('js/setting/settings/index.js') }}"></script>
     @endpush
 </x-backend-layout>

@@ -11,10 +11,10 @@
 |
 */
 
-Route::prefix('setting')->middleware('auth')->group(function () {
+Route::prefix('setting')->middleware(['auth'])->group(function () {
     Route::get('/', 'SettingController@index');
 
-    Route::group(['prefix' => 'settings'], function () {
+    Route::group(['prefix' => 'settings', 'middleware' => 'authorization_route'], function () {
         Route::get('/', 'SettingsController@index')->name('setting.settings.index');
         Route::get('/create', 'SettingsController@create')->name('setting.settings.create');
         Route::post('/', 'SettingsController@store')->name('setting.settings.store');
@@ -24,7 +24,7 @@ Route::prefix('setting')->middleware('auth')->group(function () {
         Route::get('/checkData', 'SettingsController@checkData')->name('setting.settings.checkData');
     });
 
-    Route::group(['prefix' => 'roles'], function () {
+    Route::group(['prefix' => 'roles', 'middleware' => 'authorization_route'], function () {
         Route::get('/', 'RolesController@index')->name('setting.roles.index');
         Route::get('/create', 'RolesController@create')->name('setting.roles.create');
         Route::post('/', 'RolesController@store')->name('setting.roles.store');
@@ -34,7 +34,7 @@ Route::prefix('setting')->middleware('auth')->group(function () {
         Route::delete('/{id}', 'RolesController@destroy')->name('setting.roles.destroy');
     });
 
-    Route::group(['prefix' => 'permissions'], function () {
+    Route::group(['prefix' => 'permissions', 'middleware' => 'authorization_route'], function () {
         Route::get('/', 'PermissionsController@index')->name('setting.permissions.index');
         Route::get('/create', 'PermissionsController@create')->name('setting.permissions.create');
         Route::post('/', 'PermissionsController@store')->name('setting.permissions.store');

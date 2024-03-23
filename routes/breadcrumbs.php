@@ -61,5 +61,5 @@ Breadcrumbs::for('siswa', function (BreadcrumbTrail $trail) {
 
 Breadcrumbs::for('nilaiSiswa', function (BreadcrumbTrail $trail) {
     $trail->parent('siswa');
-    $trail->push('Nilai Siswa', secure_url('master/nilaiSiswa?siswa_id=' . request()->query('siswa_id')));
+    $trail->push('Nilai Siswa', url('master/nilaiSiswa?siswa_id=' . request()->query('siswa_id')));
 });
